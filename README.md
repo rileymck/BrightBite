@@ -18,18 +18,26 @@ Directions for flutter, MacOS
   -Install Visual Studio Code, heres a link to follow " https://code.visualstudio.com/docs/setup/mac "
 
   In VScode
-    -Under extentions type in " flutter " it should be the first one named " Flutter Dart Code "
-    -Under Exploror 
+    -Under extentions tab type in " flutter " it should be the first one named " Flutter Dart Code "
+    -Under Exploror tab press Command + Shift + P and type "Flutter: New Project" and follow directions to either locate or download the SDK
 
   Option B
+  -Download the Flutter SDK from the Flutter website 
+    " https://docs.flutter.dev/get-started/install?gad_source=1&gclid=CjwKCAiA2JG9BhAuEiwAH_zf3iNRZY06OMCu0aGtTYY2c7IK6Jaw-N5pR8KOojsgXKlumw0iWWfuBBoC_-cQAvD_BwE&gclsrc=aw.ds "
+
+  In terminal
+    - " cd " into Users then " mkdir development " then " cd development " then " mkdir flutter "
+    -Update your path " echo 'export PATH="$PATH:`pwd`/flutter/bin"' >> ~/.zshenv " then " source ~/.zshenv "
     
 
+3.Configure iOS Development
+  In Terminal
+    -Install the iOS simulator " xcodebuild -downloadPlatform iOS "
+    -Launch iOS simulator " open -a Simulator "
 
-
-
-
-
-1. Go to this website and click on macOS
-   https://docs.flutter.dev/get-started/install?gad_source=1&gclid=Cj0KCQiAkoe9BhDYARIsAH85cDPLBHNkmCqMUtKYtPyZZ4OLIVD1Bw87tuPPHlXOyjZnv5K32Ue-InUaAvaMEALw_wcB&gclsrc=aw.ds
-2.Chose the iOS, your first app
-3.
+4.Run Flutter Doctor
+  In Terminal
+    - " flutter doctor "
+    check output for any issues to see if anythings missing
+    
+    
