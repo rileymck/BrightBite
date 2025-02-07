@@ -36,7 +36,7 @@ Directions for flutter, MacOS
     - " flutter doctor "
     check output for any issues to see if anythings missing
 
-5.Run your first app
+5.Run your first app, with iphone simulator
   -Open your flutter project in VS code
   -Launch the iOS simulator or connect a physical device
   -in VS code terminal run " flutter run "
@@ -48,4 +48,3 @@ Directions for flutter, MacOS
     -To manually reset it " sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer "
       -then verify that its changed " xcode-select --print-path "
     -In VS code terminal type " flutter run "
-    
