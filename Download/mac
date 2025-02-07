@@ -48,3 +48,24 @@ Directions for flutter, MacOS
     -To manually reset it " sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer "
       -then verify that its changed " xcode-select --print-path "
     -In VS code terminal type " flutter run "
+
+6.Run your first app, with your physical phone
+  Connect your phone to your Mac via USB
+  Trust your Mac
+  Enable Developer mode on your iPhone
+    -settings -> privacy and security -> developer mode
+    -enable it and restart your iPhone
+  Make sure your device is detected by flutter
+    -In your terminal run " flutter devices "
+  Install Xcode command line tools and set up signing 
+    -In your terminal run " sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer "
+    -then run "flutter doctor "
+      -if flutter doctor shows an issue with cocoapods, download cocoapods
+        -with this command " pod install ", make sure you have homebrew installed first or else command may not work
+        -make sure it was installed with " pods --version "
+  Set up an Apple developer account
+    -open Xcode -> settings -> accounts
+    -sign in with your apple id
+    -under signing and capabilities select your apple id as the team\
+  Try running the app on your iPhone
+    -In vs code terminal run " flutter run "
