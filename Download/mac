@@ -41,4 +41,11 @@ Directions for flutter, MacOS
   -Launch the iOS simulator or connect a physical device
   -in VS code terminal run " flutter run "
 
-  If you get an error saying something like " No wireless devices were found "
+  If you get an error saying something like " No wireless devices were found " do the following
+    -In your terminal " xcode-select --print-path "
+      it should be "/Applications/Xcode.app/Contents/Developer " if its not then you need to manually reset it
+    -Make sure command line tools are installed " xcode-select --install "
+    -To manually reset it " sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer "
+      -then verify that its changed " xcode-select --print-path "
+    -In VS code terminal type " flutter run "
+    
