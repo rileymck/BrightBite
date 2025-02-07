@@ -49,7 +49,35 @@ Directions for flutter, MacOS
       -then verify that its changed " xcode-select --print-path "
     -In VS code terminal type " flutter run "
 
-6.Run your first app, with your physical phone
+6.Run your first app, with android simulator
+  -Install Android Studio and Android SDK
+    -open android studio 
+    -In setup wizard ensure the following are installed
+      -Android SDK
+      -Android Virtual Device (AVD)
+      -Intel x86 Emulator Accelerator (HAXM)
+    -Check Android SDK Location
+      -open android studio
+      -go to preferences -> appearance and behavior -> system settings -> android SDK
+      -copy the SDK path
+    -Add Android SDK to PATH (if needed)
+      -run in terminal (replace the path with your actual SDK path)
+        - " echo 'export ANDROID_HOME=$HOME/Library/Android/sdk' >> ~/.zshrc "
+        - " echo 'export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH' >> ~/.zshrc "
+        - " source ~/.zshrc "
+
+  -Enable Android Emulator
+    -Enable Android Emulator in Flutter
+      -launch android studio
+      -go to tools -> device manager
+      -cliick "create device" and select a pixel or any android device
+      -select a system image
+      -click finish
+    -In the terminal run
+      - " flutter emulator "
+      - " flutter emulators --launch <emulator-name> "
+
+7.Run your first app, with your physical phone
   Connect your phone to your Mac via USB
   Trust your Mac
   Enable Developer mode on your iPhone
