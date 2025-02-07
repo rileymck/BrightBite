@@ -35,3 +35,10 @@ Directions for flutter, MacOS
   In Terminal
     - " flutter doctor "
     check output for any issues to see if anythings missing
+
+5.Run your first app
+  -Open your flutter project in VS code
+  -Launch the iOS simulator or connect a physical device
+  -in VS code terminal run " flutter run "
+
+  If you get an error saying something like " No wireless devices were found "
