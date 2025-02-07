@@ -1,1 +1,42 @@
-test
+Directions for Flutter, Windows
+1.Install development Tools
+  -Install flutter SDK
+    -download flutter from the official site, " https://docs.flutter.dev/get-started/install/windows/mobile "
+    -extract ZIP file to a directory 
+  -Set enviornment variables
+    -in powershell, " [System.Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\src\flutter\bin", [System.EnvironmentVariableTarget]::Machine) "
+  -Install git
+
+2.Install Visual Studio Code
+   -Install Visual Studio Code, heres a link to follow " https://code.visualstudio.com/docs/setup/windows "
+
+3.Install Android SDK and Emulator
+  -In powershell run " flutter doctor --android-licenses " and accept all licenses when prompted
+
+4.Verify Flutter Installation
+  -In powershell run " flutter doctor ", check for missing dependencies and install any required tools
+
+5.Run Your First App on an Emulator
+  -open your flutter project in VScode
+  -in VScode terminal run " flutter run "
+
+6.Run your first app, with your physical phone
+  Connect your phone to your Mac via USB
+  Trust your Mac
+  Enable Developer mode on your iPhone
+    -settings -> privacy and security -> developer mode
+    -enable it and restart your iPhone
+  Make sure your device is detected by flutter
+    -In your terminal run " flutter devices "
+  Install Xcode command line tools and set up signing 
+    -In your terminal run " sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer "
+    -then run "flutter doctor "
+      -if flutter doctor shows an issue with cocoapods, download cocoapods
+        -with this command " pod install ", make sure you have homebrew installed first or else command may not work
+        -make sure it was installed with " pods --version "
+  Set up an Apple developer account
+    -open Xcode -> settings -> accounts
+    -sign in with your apple id
+    -under signing and capabilities select your apple id as the team\
+  Try running the app on your iPhone
+    -In vs code terminal run " flutter run "
