@@ -80,7 +80,7 @@ Goal Statement:  Discuss and create to-dos on the github project page. Loosely d
   - Refining the presentation and project logistics.  
 
 - **Low Priority**
-  - Emulator testing on additional devices (post-MVP).
+  - Emulator testing on additional, lesser known devices.
 
 
 # Sprint Review
