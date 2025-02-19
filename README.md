@@ -18,4 +18,3 @@ samples, guidance on mobile development, and a full API reference.
 # Download folder
 Under downloads you can see how to set up your device
 
-Helllo this is elicia!
