@@ -1,0 +1,2 @@
+/Users/whitneyhaddad/Desktop/BrightBite/android/app/.cxx/Debug/c445i4x5/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/whitneyhaddad/Desktop/BrightBite/android/app/.cxx/Debug/c445i4x5/arm64-v8a/CMakeFiles/rebuild_cache.dir

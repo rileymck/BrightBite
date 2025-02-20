@@ -23,6 +23,7 @@ flutter:
   # Add this section for your images
   assets:
     - assets/images/brightbitelogo.png
+    - assets/images/toothbrush_toothpaste_icon.png
 
   fonts:
     - family: PT Serif

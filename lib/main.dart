@@ -1,9 +1,11 @@
 // Import the material package which contains the widgets and tools needed for the app
 import 'package:flutter/material.dart';
 import 'dart:math' show min; // Import min function for calculating dimensions
+import 'main_page.dart'; // Import the main page widget
 
 // Main function that runs the app
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const BrightBiteApp());
 }
 
@@ -144,7 +146,11 @@ class WelcomeScreen extends StatelessWidget {
       ),
       child: TextButton(
         onPressed: () {
-          // Navigation logic to the main page to be added here!
+          // Navigate to the main page
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const MainPage()),
+          );
         },
         style: TextButton.styleFrom(
           padding: EdgeInsets.zero, // Remove default padding
