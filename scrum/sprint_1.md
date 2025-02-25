@@ -48,89 +48,60 @@ Goal Statement:  Discuss and create to-dos on the github project page. Loosely d
 
 ---
 
-## **Discussion of Approach**
-- **Task Delegation:** Each member will be assigned specific tasks based on their expertise and progress.  
-- **Development Workflow:** Tasks will be organized into branches for efficient collaboration.  
-- **UI & UX Design:** Figma designs will be refined before integration.  
-- **Research & Accessibility:** Product research will focus on making services and links more user-friendly.  
-- **Task Management:** A shared task board will be used to track progress and updates.  
+## **Daily Scrum Meeting**
+**Date & Time:** 2/25/2025 - 11:31 AM  
+**Participants:** Whitney, Elicia, Shukria, Zaid, Riley, Yun  
+**Goal Statement:**  Discuss the created to-dos on the github project page. Update each other on their current progress of the project.
 
 ---
 
-## **Task Assignments**
-| **Task**                  | **Assigned To**  | **Status**    | **Notes** |
-|---------------------------|-----------------|--------------|-----------|
-| Welcome Page UI           | Whitney         | In Progress  | Refining UI, fixing bugs |
-| Task Board Setup          | Riley           | In Progress  | Defining tasks & workflow |
-| User Stories Completion   | Zaid            | In Progress  | Researching and finalizing |
-| Product Research          | Elicia          | In Progress  | Finding links & resources |
-| Task Delegation & Branches | Yun             | In Progress  | Structuring repository |
-| Prototyping Screens       | Shukria         | In Progress  | Fixing scroll issues |
+## **Progress & Individual Challenges**
+
+### **1. Whitney Haddad**
+- **Yesterday:** Finished implementing the welcome page along with the main page. Button logic, and navigation functions were also implemented. Worked on Figma design for many of the app pages. 
+- **Today:** Review and vet the dental researching done by other teammates. 
+- **Impediments:** N/A
+
+### **2. Riley McKenzie**
+- **Yesterday:** Downloaded andriod studios, set it all up, and connected physical devices along with testing. 
+- **Today:** Keeping track of logs. Researching about local databases to implement on the app.
+- **Impediments:** Limited time.
+
+### **3. Zaid**
+- **Yesterday:** Work on making User Stories. Made videos for the dental care tips.
+- **Today:** Work on the favorites function. 
+- **Impediments:** N/A
+
+### **4. Elicia Perez**
+- **Yesterday:** Conducted product research along with dental care education.
+- **Today:** Finish linking images with the researched product. Work on Figma to link the research that's been done. 
+- **Impediments:** Dealing with copyright when gathering research data.
+  
+### **5. Yun Chang**
+- **Yesterday:** Work on main menu. Implement product page and smile academy page on the app.
+- **Today:** Update daily sprint. Work on how to do local database with Riley.  
+- **Impediments:** Small feature conflicts, such as how to discern the favorites-list function with the favorite function.  
+
+### **6. Shukria**
+- **Yesterday:** Worked on additional screens Figma. Finished most of the research pages.
+- **Today:** Work on Figma design for favoriting along accessing favorited items.
+- **Impediments:** N/A
 
 ---
-
-## **To-Do Chart Progression**
-- **High Priority**
-  - Finalizing the task board and ensuring all user stories are documented.
-  - Resolving UI issues related to scrolling and image placement.
-  - Structuring repository branches for smoother collaboration.  
-
-- **Medium Priority**
-  - Product research and accessibility enhancements.
-  - Refining the presentation and project logistics.  
-
-- **Low Priority**
-  - Emulator testing on additional, lesser known devices.
 
 
 # Sprint Review
 
-Date/Time: 2/25/2025 - 11:15 AM  
+Date/Time: 
 
-Participants: Whitney, Elicia, Shukria, Zaid, Riley, Yun  
+Participants: 
 
-## **Sprint Accomplishments**
-- **UI Development:** Whitney made significant progress on the welcome page UI, refining the design and resolving bugs.  
-- **Task Organization:** Riley successfully set up the task board and helped define tasks for team members.  
-- **User Stories:** Zaid completed research on user stories and contributed to finalizing them.  
-- **Product Research & Accessibility:** Elicia gathered resources and links to enhance accessibility within the app.  
-- **Development Workflow:** Yun structured the GitHub repository by creating necessary branches for task delegation.  
-- **Prototyping & UI Design:** Shukria worked on refining the Figma design and made progress on resolving finger-scrolling issues.  
-
-## **Demonstration & Feedback**
-- Team reviewed the progress on the welcome page UI and provided feedback for minor refinements.  
-- Task board was reviewed and validated to ensure alignment with project goals.  
-- Prototyped screens were assessed, with feedback given for necessary adjustments in UI flow.  
-- Research findings were shared, and key accessibility improvements were noted for integration.  
-
-## **Next Steps**
-- Final adjustments on UI elements based on feedback.  
-- Continue refining the task board and adding more detailed subtasks if needed.  
-- Complete the implementation of user stories and integrate product research findings.  
-- Further debugging and testing of the app on multiple devices.  
-- Ensure smooth collaboration by adhering to branch management best practices.  
-
----
+Notes...
 
 # Sprint Retrospective
 
-Date/Time: 2/25/2025 - 11:15 AM  
+Date/Time: 
 
-Participants: Whitney, Elicia, Shukria, Zaid, Riley, Yun  
+Participants: 
 
-## **What Went Well?**
-- Effective collaboration in defining and organizing tasks.  
-- Team members successfully onboarded into Flutter/Dart.  
-- Task board setup helped improve workflow visibility.  
-- Progress in UI design and research contributions.  
-
-## **What Could Be Improved?**
-- Task delegation process could be more streamlined to avoid uncertainty.  
-- Some members faced time constraints that affected productivity.  
-- Technical issues with Figma (scrolling functionality) slowed down UI prototyping.  
-
-## **Action Items for Improvement**
-- Clearly define and document task delegation in advance to minimize confusion.  
-- Adjust workloads based on availability to mitigate time constraints.  
-- Research and implement better Figma practices to resolve design tool issues.  
-- Enhance communication between UI/UX and development teams to ensure smoother integration.  
+Notes...
