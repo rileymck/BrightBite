@@ -12,8 +12,6 @@ Goal Statement:  Discuss and create to-dos on the github project page. Loosely d
 **Date & Time:** 2/18/2025 - 11:15 AM  
 **Participants:** Whitney, Elicia, Shukria, Zaid, Riley, Yun  
 
----
-
 ## **Progress & Individual Challenges**
 
 ### **1. Whitney Haddad**
@@ -52,8 +50,6 @@ Goal Statement:  Discuss and create to-dos on the github project page. Loosely d
 **Date & Time:** 2/25/2025 - 11:31 AM  
 **Participants:** Whitney, Elicia, Shukria, Zaid, Riley, Yun  
 **Goal Statement:**  Discuss the created to-dos on the github project page. Update each other on their current progress of the project.
-
----
 
 ## **Progress & Individual Challenges**
 
