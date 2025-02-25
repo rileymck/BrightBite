@@ -6,7 +6,7 @@ Participants: Whitney, Elicia, Shukria, Zaid, Riley, Yun
 
 Goal Statement:  Discuss and create to-dos on the github project page. Loosely discuss role for each team member. 
 
-# **Daily Sprint Planning**
+---
 
 # **Daily Scrum Meeting**
 **Date & Time:** 2/18/2025 - 11:15 AM  
