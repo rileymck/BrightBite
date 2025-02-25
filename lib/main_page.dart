@@ -6,6 +6,7 @@ import 'dart:math' show min;
 import 'smile_academy.dart';
 import 'product_guide.dart';
 
+
 // MainPage widget that serves as the main menu screen after the welcome screen
 // Using StatelessWidget since this page doesn't need to maintain any state
 class MainPage extends StatelessWidget {
