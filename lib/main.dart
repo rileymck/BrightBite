@@ -3,11 +3,20 @@ import 'package:flutter/material.dart';
 import 'dart:math' show min; // Import min function for calculating dimensions
 import 'main_page.dart'; // Import the main page widget
 
+//for hive database for favorite function
+import 'package:hive_flutter/hive_flutter.dart';
+
+
+
+
+
 // Main function that runs the app
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter(); // Initialize Hive before running the app
   runApp(const BrightBiteApp());
 }
+
 
 // Root widget of the app
 class BrightBiteApp extends StatelessWidget {
