@@ -8,11 +8,14 @@ import 'product_guide.dart';
 
 
 
-
 //for hive database for favorite function
 import 'package:hive/hive.dart';
+import 'package:hive/hive.dart';
 
-final myBox = Hive.box('myBox'); // Access the Hive box
+import 'favorite_item.dart';
+
+
+var myBox = Hive.box('myBox');
 
 void storeData() {
   myBox.put('key', 'Hello, Hive!'); // Save data
@@ -22,11 +25,6 @@ void retrieveData() {
   String? value = myBox.get('key'); // Retrieve data
   print(value);
 }
-
-
-
-
-
 
 
 // MainPage widget that serves as the main menu screen after the welcome screen
@@ -311,5 +309,26 @@ class MainPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+
+class FavoriteService {
+  static final Box<FavoriteItem> _favoritesBox = Hive.box('favoritesBox');
+
+  static void addFavorite(FavoriteItem item) {
+    _favoritesBox.put(item.id, item);
+  }
+
+  static void removeFavorite(String id) {
+    _favoritesBox.delete(id);
+  }
+
+  static List<FavoriteItem> getFavorites() {
+    return _favoritesBox.values.toList();
+  }
+
+  static bool isFavorite(String id) {
+    return _favoritesBox.containsKey(id);
   }
 }
