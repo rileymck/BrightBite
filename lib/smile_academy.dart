@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'bottom_nav_bar.dart'; // ✅ Import BottomNavBar
+import 'dental_treatment_page.dart';  //Importd dental treatment page
 
 class SmileAcademy extends StatelessWidget {
   const SmileAcademy({super.key});
@@ -44,11 +45,11 @@ class SmileAcademy extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 30),
-            _buildMenuButton(context, 'Oral Hygiene', Icons.clean_hands),
+            _buildMenuButton(context, 'Oral Hygiene', Icons.clean_hands, null),
             const SizedBox(height: 15),
-            _buildMenuButton(context, 'Dental Treatment', Icons.medical_services),
+            _buildMenuButton(context, 'Dental Treatment', Icons.medical_services, DentalTreatmentPage()),  // Added DentalT..P.. to link
             const SizedBox(height: 15),
-            _buildMenuButton(context, 'Life Stages', Icons.cake),
+            _buildMenuButton(context, 'Life Stages', Icons.cake, null),
           ],
         ),
       ),
@@ -57,7 +58,7 @@ class SmileAcademy extends StatelessWidget {
   }
 
   // Helper function to build a menu button
-  Widget _buildMenuButton(BuildContext context, String title, IconData icon) {
+  Widget _buildMenuButton(BuildContext context, String title, IconData icon, Widget? page) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
@@ -70,6 +71,12 @@ class SmileAcademy extends StatelessWidget {
           ),
         ),
         onPressed: () {
+          if (title == 'Dental Treatment') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const DentalTreatmentPage()),
+          );
+        }
           // TODO: Navigate to respective page
         },
         child: Row(
