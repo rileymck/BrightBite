@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:math' show min; // Import min function for calculating dimensions
 import 'main_page.dart'; // Import the main page widget
 
+
 // Main function that runs the app
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+// import 'package:test_flutter/toothbrush.dart';
 import 'bottom_nav_bar.dart'; 
+import 'toothbrush.dart';
 
 class ProductGuide extends StatelessWidget {
   const ProductGuide({super.key});
@@ -74,6 +76,13 @@ class ProductGuide extends StatelessWidget {
           ),
         ),
         onPressed: () {
+          if (title == 'Toothbrush') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ToothbrushPage()),
+            );
+          }
+
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

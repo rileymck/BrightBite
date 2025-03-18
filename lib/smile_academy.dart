@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'bottom_nav_bar.dart'; // ✅ Import BottomNavBar
 import 'dental_treatment_page.dart';  //Importd dental treatment page
+// import 'life_stages.dart';  // Imports Life Stages page
 
 class SmileAcademy extends StatelessWidget {
   const SmileAcademy({super.key});
@@ -77,6 +78,14 @@ class SmileAcademy extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const DentalTreatmentPage()),
           );
         }
+          // if (title == 'Life Stages') {
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute(builder: (context) => const LifeStagesPage()),
+          //   );
+          // }
+
+
           // TODO: Navigate to respective page
         },
         child: Row(
