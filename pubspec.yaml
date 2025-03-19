@@ -24,6 +24,7 @@ flutter:
   assets:
     - assets/images/brightbitelogo.png
     - assets/images/toothbrush_toothpaste_icon.png
+    - assets/images/oralHygieneLogo.png
 
   fonts:
     - family: PT Serif

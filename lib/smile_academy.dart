@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:math' show min;
 import 'bottom_nav_bar.dart';
 import 'dental_treatment_page.dart';
+import 'package:test_flutter/oral-hygiene-screen.dart';
+import 'bottom_nav_bar.dart'; // ✅ Import BottomNavBar
+
 
 class SmileAcademy extends StatelessWidget {
   const SmileAcademy({super.key});
@@ -130,12 +133,23 @@ class SmileAcademy extends StatelessWidget {
           elevation: 0,
         ),
         onPressed: () {
+
           if (page != null) {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => page),
             );
           }
+
+          if (title == 'Oral Hygiene') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const OralHygiene()),
+          );
+          }
+          
+          // TODO: Navigate to respective page
+
         },
         child: Text(
           title,
