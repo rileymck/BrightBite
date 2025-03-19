@@ -4,6 +4,7 @@ import 'dart:math' show min; // Import min function for calculating dimensions
 import 'main_page.dart'; // Import the main page widget
 import 'package:test_flutter/favorites_page.dart';
 
+
 //for hive database for favorite function
 import 'package:hive_flutter/hive_flutter.dart';
 

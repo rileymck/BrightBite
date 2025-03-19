@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:test_flutter/favorite_item.dart';
 
 part 'favorite_item.g.dart'; // Auto-generated file for adapters
 

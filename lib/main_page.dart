@@ -10,9 +10,8 @@ import 'product_guide.dart';
 
 //for hive database for favorite function
 import 'package:hive/hive.dart';
-import 'package:hive/hive.dart';
 
-part 'favorite_item.g.dart';
+import 'package:test_flutter/favorite_item.dart'; // ✅ Correct
 
 
 var myBox = Hive.box('myBox');
