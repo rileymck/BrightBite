@@ -6,7 +6,6 @@ import 'dart:math' show min;
 import 'smile_academy.dart';
 import 'product_guide.dart';
 
-
 // MainPage widget that serves as the main menu screen after the welcome screen
 // Using StatelessWidget since this page doesn't need to maintain any state
 class MainPage extends StatelessWidget {
@@ -135,7 +134,7 @@ class MainPage extends StatelessWidget {
                         // Product Guide button with custom PNG image
                         _buildMenuItemWithImage(
                           context: context,
-                          title: 'Product Guide',
+                          title: 'Product Purchasing Guide',
                           imagePath:
                               'assets/images/toothbrush_toothpaste_icon.png',
                           height: menuHeight,
