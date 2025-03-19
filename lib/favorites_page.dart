@@ -7,6 +7,7 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF0051C1),
       appBar: AppBar(title: const Text('Favorites')),
       body: ValueListenableBuilder(
         valueListenable: Hive.box('favorites').listenable(),
