@@ -12,7 +12,7 @@ import 'product_guide.dart';
 import 'package:hive/hive.dart';
 import 'package:hive/hive.dart';
 
-import 'favorite_item.dart';
+part 'favorite_item.g.dart';
 
 
 var myBox = Hive.box('myBox');

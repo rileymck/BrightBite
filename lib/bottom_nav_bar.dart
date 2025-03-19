@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter/favorites_page.dart';
-
+import 'main_page.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
@@ -9,29 +9,30 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       color: Colors.white,
-      shape: const CircularNotchedRectangle(), // Optional rounded effect
-      notchMargin: 5, // Space around the notch
+      shape: const CircularNotchedRectangle(), // Retaining the notch design
+      notchMargin: 5,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-              icon: const Icon(Icons.home, color: Colors.black),
+              icon: const Icon(Icons.home, color: Colors.black, size: 30),
               onPressed: () {
-                // TODO: Implement navigation later
-                //navigate to home
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MainPage()),
+                );
               },
             ),
             IconButton(
-              icon: const Icon(Icons.search, color: Colors.black),
+              icon: const Icon(Icons.search, color: Colors.black, size: 30),
               onPressed: () {
-                // TODO: Implement navigation later
-                //navigate to search
+                // Search functionality to be implemented
               },
             ),
             IconButton(
-              icon: const Icon(Icons.favorite, color: Colors.black),
+              icon: const Icon(Icons.favorite, color: Colors.black, size: 30),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -40,10 +41,9 @@ class BottomNavBar extends StatelessWidget {
               },
             ),
             IconButton(
-              icon: const Icon(Icons.chat, color: Colors.black),
+              icon: const Icon(Icons.chat_bubble, color: Colors.black, size: 30),
               onPressed: () {
-                // TODO: Implement navigation later
-                //navigate to chat
+                // Chat functionality to be implemented
               },
             ),
           ],

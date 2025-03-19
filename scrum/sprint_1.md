@@ -6,13 +6,11 @@ Participants: Whitney, Elicia, Shukria, Zaid, Riley, Yun
 
 Goal Statement:  Discuss and create to-dos on the github project page. Loosely discuss role for each team member. 
 
-# **Daily Sprint Planning**
+---
 
-## **Daily Scrum Meeting**
+# **Daily Scrum Meeting**
 **Date & Time:** 2/18/2025 - 11:15 AM  
 **Participants:** Whitney, Elicia, Shukria, Zaid, Riley, Yun  
-
----
 
 ## **Progress & Individual Challenges**
 
@@ -48,39 +46,44 @@ Goal Statement:  Discuss and create to-dos on the github project page. Loosely d
 
 ---
 
-## **Discussion of Approach**
-- **Task Delegation:** Each member will be assigned specific tasks based on their expertise and progress.  
-- **Development Workflow:** Tasks will be organized into branches for efficient collaboration.  
-- **UI & UX Design:** Figma designs will be refined before integration.  
-- **Research & Accessibility:** Product research will focus on making services and links more user-friendly.  
-- **Task Management:** A shared task board will be used to track progress and updates.  
+# **Daily Scrum Meeting**
+**Date & Time:** 2/25/2025 - 11:31 AM  
+**Participants:** Whitney, Elicia, Shukria, Zaid, Riley, Yun  
+**Goal Statement:**  Discuss the created to-dos on the github project page. Update each other on their current progress of the project.
+
+## **Progress & Individual Challenges**
+
+### **1. Whitney Haddad**
+- **Yesterday:** Finished implementing the welcome page along with the main page. Button logic, and navigation functions were also implemented. Worked on Figma design for many of the app pages. 
+- **Today:** Review and vet the dental researching done by other teammates. 
+- **Impediments:** N/A
+
+### **2. Riley McKenzie**
+- **Yesterday:** Downloaded andriod studios, set it all up, and connected physical devices along with testing. 
+- **Today:** Keeping track of logs. Researching about local databases to implement on the app.
+- **Impediments:** Limited time.
+
+### **3. Zaid**
+- **Yesterday:** Work on making User Stories. Made videos for the dental care tips.
+- **Today:** Work on the favorites function. 
+- **Impediments:** N/A
+
+### **4. Elicia Perez**
+- **Yesterday:** Conducted product research along with dental care education.
+- **Today:** Finish linking images with the researched product. Work on Figma to link the research that's been done. 
+- **Impediments:** Dealing with copyright when gathering research data.
+  
+### **5. Yun Chang**
+- **Yesterday:** Work on main menu. Implement product page and smile academy page on the app.
+- **Today:** Update daily sprint. Work on how to do local database with Riley.  
+- **Impediments:** Small feature conflicts, such as how to discern the favorites-list function with the favorite function.  
+
+### **6. Shukria**
+- **Yesterday:** Worked on additional screens Figma. Finished most of the research pages.
+- **Today:** Work on Figma design for favoriting along accessing favorited items.
+- **Impediments:** N/A
 
 ---
-
-## **Task Assignments**
-| **Task**                  | **Assigned To**  | **Status**    | **Notes** |
-|---------------------------|-----------------|--------------|-----------|
-| Welcome Page UI           | Whitney         | In Progress  | Refining UI, fixing bugs |
-| Task Board Setup          | Riley           | In Progress  | Defining tasks & workflow |
-| User Stories Completion   | Zaid            | In Progress  | Researching and finalizing |
-| Product Research          | Elicia          | In Progress  | Finding links & resources |
-| Task Delegation & Branches | Yun             | In Progress  | Structuring repository |
-| Prototyping Screens       | Shukria         | In Progress  | Fixing scroll issues |
-
----
-
-## **To-Do Chart Progression**
-- **High Priority**
-  - Finalizing the task board and ensuring all user stories are documented.
-  - Resolving UI issues related to scrolling and image placement.
-  - Structuring repository branches for smoother collaboration.  
-
-- **Medium Priority**
-  - Product research and accessibility enhancements.
-  - Refining the presentation and project logistics.  
-
-- **Low Priority**
-  - Emulator testing on additional, lesser known devices.
 
 
 # Sprint Review
