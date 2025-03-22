@@ -33,6 +33,7 @@ class SmileAcademy extends StatelessWidget {
         ),
       ),
       backgroundColor: const Color(0xFF0051C1),
+      bottomNavigationBar: const BottomNavBar(),
       body: SafeArea(
         bottom: false, // Allow content to extend below safe area
         child: Column(
@@ -84,23 +85,6 @@ class SmileAcademy extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
-            ),
-
-            // Full-width navigation bar at bottom
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: double.infinity,
-                height: isTablet ? 80 : 60,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
-                  ),
-                ),
-                child: const BottomNavBar(),
               ),
             ),
           ],
