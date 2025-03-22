@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math' show min;
 import 'bottom_nav_bar.dart';
 import 'dental_treatment_page.dart';
+import 'oral_hygiene_page.dart';
+
 
 class SmileAcademy extends StatelessWidget {
   const SmileAcademy({super.key});
@@ -70,7 +72,7 @@ class SmileAcademy extends StatelessWidget {
                           height: isTablet ? height * 0.05 : height * 0.04),
 
                       // Larger buttons without icons
-                      _buildMenuButton(context, 'Oral Hygiene', isTablet, null),
+                      _buildMenuButton(context, 'Oral Hygiene', isTablet, const OralHygienePage()),
                       SizedBox(height: height * 0.02),
                       _buildMenuButton(context, 'Dental Treatment', isTablet,
                           const DentalTreatmentPage()),
