@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'bottom_nav_bar.dart';
+import '../bottom_nav_bar.dart';
+import 'how_to_brush_page.dart';
+import 'how_to_floss_page.dart';
+import 'what_are_interdental_aids_page.dart';
+import 'how_to_clean_your_tongue_page.dart';
+import 'others_page.dart';
+
 
 class OralHygienePage extends StatelessWidget {
   const OralHygienePage({super.key});
@@ -61,15 +67,15 @@ class OralHygienePage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    _buildInfoCard(context, 'Brushing Technique'),
+                    _buildInfoCard(context, 'Brushing Technique', const HowToBrushPage()),
                     const SizedBox(height: 10),
-                    _buildInfoCard(context, 'Flossing'),
+                    _buildInfoCard(context, 'How to Floss', const HowToFlossPage()),
                     const SizedBox(height: 10),
-                    _buildInfoCard(context, 'Tongue Cleaning'),
+                    _buildInfoCard(context, 'What are Interdental Aids', const WhatAreInterdentalAidsPage()),
                     const SizedBox(height: 10),
-                    _buildInfoCard(context, 'Mouthwash Use'),
+                    _buildInfoCard(context, 'How to Clean Your Tongue', const HowToCleanYourTonguePage()),
                     const SizedBox(height: 10),
-                    _buildInfoCard(context, 'Habits to Avoid'),
+                    _buildInfoCard(context, 'Other', const OtherPage()),
                   ],
                 ),
               ),
@@ -81,7 +87,7 @@ class OralHygienePage extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoCard(BuildContext context, String title) {
+  Widget _buildInfoCard(BuildContext context, String title, Widget? page) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
@@ -94,7 +100,12 @@ class OralHygienePage extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          // You can add navigation or pop-up info here later
+          if (page != null) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => page),
+            );
+          }
         },
         child: Text(
           title,

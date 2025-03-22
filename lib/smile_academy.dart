@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:math' show min;
 import 'bottom_nav_bar.dart';
-import 'dental_treatment_page.dart';
-import 'oral_hygiene_page.dart';
+import 'dental_treatment/dental_treatment_page.dart';
+import 'oral_hygiene/oral_hygiene_page.dart';
+import 'life_stages_page.dart';
+
 
 
 class SmileAcademy extends StatelessWidget {
@@ -78,8 +80,7 @@ class SmileAcademy extends StatelessWidget {
                       _buildMenuButton(context, 'Dental Treatment', isTablet,
                           const DentalTreatmentPage()),
                       SizedBox(height: height * 0.02),
-                      _buildMenuButton(context, 'Life Stages', isTablet, null),
-
+                      _buildMenuButton(context, 'Life Stages', isTablet, const LifeStagesPage()),
                       // Space for nav bar
                       SizedBox(height: height * 0.15),
                     ],
