@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:math' show min;
 import 'bottom_nav_bar.dart';
-import 'dental_treatment_page.dart';
+import 'dental_treatment/dental_treatment_page.dart';
+import 'oral_hygiene/oral_hygiene_page.dart';
+import 'life_stages_page.dart';
+
+
 
 class SmileAcademy extends StatelessWidget {
   const SmileAcademy({super.key});
@@ -31,6 +35,7 @@ class SmileAcademy extends StatelessWidget {
         ),
       ),
       backgroundColor: const Color(0xFF0051C1),
+      bottomNavigationBar: const BottomNavBar(),
       body: SafeArea(
         bottom: false, // Allow content to extend below safe area
         child: Column(
@@ -70,35 +75,17 @@ class SmileAcademy extends StatelessWidget {
                           height: isTablet ? height * 0.05 : height * 0.04),
 
                       // Larger buttons without icons
-                      _buildMenuButton(context, 'Oral Hygiene', isTablet, null),
+                      _buildMenuButton(context, 'Oral Hygiene', isTablet, const OralHygienePage()),
                       SizedBox(height: height * 0.02),
                       _buildMenuButton(context, 'Dental Treatment', isTablet,
                           const DentalTreatmentPage()),
                       SizedBox(height: height * 0.02),
-                      _buildMenuButton(context, 'Life Stages', isTablet, null),
-
+                      _buildMenuButton(context, 'Life Stages', isTablet, const LifeStagesPage()),
                       // Space for nav bar
                       SizedBox(height: height * 0.15),
                     ],
                   ),
                 ),
-              ),
-            ),
-
-            // Full-width navigation bar at bottom
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: double.infinity,
-                height: isTablet ? 80 : 60,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
-                  ),
-                ),
-                child: const BottomNavBar(),
               ),
             ),
           ],
