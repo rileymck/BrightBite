@@ -86,18 +86,52 @@ Goal Statement:  Discuss and create to-dos on the github project page. Loosely d
 ---
 
 
-# Sprint Review
+# Sprint Review  
+**Date/Time:** 3/25/2025 - 11:00 AM  
+**Participants:** Whitney, Elicia, Shukria, Zaid, Riley, Yun  
 
-Date/Time: 
+### Summary of Completed Work:
+- **UI/UX Progress:**  
+  - Whitney finalized the welcome and main pages with functional navigation and button logic.  
+  - Shukria completed several Figma screens including designs for favoriting and accessing favorite items.  
+  - Yun implemented the main menu, product page, and Smile Academy page.
 
-Participants: 
+- **Research & Content:**  
+  - Elicia and Shukria completed dental product research and educational content.  
+  - Zaid created educational videos and drafted user stories for the application.
 
-Notes...
+- **Development Milestones:**  
+  - Riley set up Android Studio with real device testing and began exploring local databases.  
+  - Yun and Riley initiated work on implementing a local database and discussed how to manage favorite-related features.
 
-# Sprint Retrospective
+### Demonstrated Features:
+- Functional navigation between pages.  
+- Preliminary content for dental education and product pages.  
+- Figma designs that reflect real app screens.  
+- Basic app functionality tested on multiple emulators and devices.
 
-Date/Time: 
+### Product Backlog Items Not Completed:
+- Final implementation of the favorites system.  
+- Full integration of local database features.  
+- Image linking and copyright resolution.
 
-Participants: 
+# Sprint Retrospective  
+**Date/Time:** 3/1/2025 - 11:30 AM  
+**Participants:** Whitney, Elicia, Shukria, Zaid, Riley, Yun  
 
-Notes...
+### What Went Well:
+- Team members successfully picked up Flutter and Dart quickly.  
+- Clear communication and consistent daily scrum participation.  
+- Strong collaboration between design and development roles.  
+- Figma design and app development were well-aligned.
+
+### What Could Be Improved:
+- More effective task distribution and delegation early on.  
+- Time management, especially for research-heavy tasks.  
+- Clearer definition of overlapping features like the favorites system.
+
+### Action Items:
+- Start next sprint with more granular task assignments to avoid overlap.  
+- Dedicate one session to resolving implementation conflicts (e.g. favorites system).  
+- Allocate time for pair programming or knowledge sharing (especially for backend/database tasks). 
+- Set mid-sprint check-ins to realign and assess blockers.
