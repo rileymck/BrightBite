@@ -1,5 +1,7 @@
+// how_to_brush_page.dart
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart'; // Import Hive
+import 'package:hive_flutter/hive_flutter.dart'; // Import Hive Flutter for ValueListenableBuilder
 import '../bottom_nav_bar.dart';
 import '../favorite_item.dart'; // Import your FavoriteItem class
 
@@ -66,12 +68,18 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: [
-          IconButton(
-            icon: Icon(
-              isFavorite ? Icons.bookmark : Icons.bookmark_border,
-              color: Colors.white,
-            ),
-            onPressed: _toggleFavorite,
+          ValueListenableBuilder(
+            valueListenable: Hive.box('favorites').listenable(),
+            builder: (context, Box box, _) {
+              _checkIfFavorite(); // Call _checkIfFavorite() here
+              return IconButton(
+                icon: Icon(
+                  isFavorite ? Icons.bookmark : Icons.bookmark_border,
+                  color: Colors.white,
+                ),
+                onPressed: _toggleFavorite,
+              );
+            },
           ),
         ],
       ),
