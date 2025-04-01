@@ -87,7 +87,7 @@ Goal Statement:  Discuss and create to-dos on the github project page. Loosely d
 
 
 # Sprint Review  
-**Date/Time:** 3/25/2025 - 11:00 AM  
+**Date/Time:** 3/30/2025 - 11:05 AM  
 **Participants:** Whitney, Elicia, Shukria, Zaid, Riley, Yun  
 
 ### Summary of Completed Work:
