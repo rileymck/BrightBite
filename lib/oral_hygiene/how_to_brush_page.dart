@@ -1,8 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart'; // Import Hive
 import '../bottom_nav_bar.dart';
+import '../favorite_item.dart'; // Import your FavoriteItem class
 
-class HowToBrushPage extends StatelessWidget {
+class HowToBrushPage extends StatefulWidget {
   const HowToBrushPage({super.key});
+
+  @override
+  _HowToBrushPageState createState() => _HowToBrushPageState();
+}
+
+class _HowToBrushPageState extends State<HowToBrushPage> {
+  bool isFavorite = false; // Track favorite status
+
+  @override
+  void initState() {
+    super.initState();
+    _checkIfFavorite();
+  }
+
+  Future<void> _checkIfFavorite() async {
+    final box = await Hive.openBox('favorites');
+    final favorite = box.values.cast<FavoriteItem>().firstWhere(
+        (item) => item.id == 'how_to_brush',
+        orElse: () => FavoriteItem(id: '', name: '', imageUrl: ''));
+
+    setState(() {
+      isFavorite = favorite.id.isNotEmpty;
+    });
+  }
+
+  Future<void> _toggleFavorite() async {
+    final box = await Hive.openBox('favorites');
+    if (isFavorite) {
+      // Remove from favorites
+      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
+          (item) => item.id == 'how_to_brush'); // Find the index
+      if (index != -1) {
+        await box.deleteAt(index); // Delete the item
+      }
+    } else {
+      // Add to favorites
+      final newItem = FavoriteItem(
+        id: 'how_to_brush',
+        name: 'How to brush',
+        imageUrl: 'assets/images/brightbitelogo.png', // Or whatever image you want
+      );
+      await box.add(newItem);
+    }
+
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +67,11 @@ class HowToBrushPage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.bookmark_border, color: Colors.white),
-            onPressed: () {
-              // Optional: Save to favorites
-            },
+            icon: Icon(
+              isFavorite ? Icons.bookmark : Icons.bookmark_border,
+              color: Colors.white,
+            ),
+            onPressed: _toggleFavorite,
           ),
         ],
       ),
@@ -44,8 +95,6 @@ class HowToBrushPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-
-              // Watch Video Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -72,8 +121,6 @@ class HowToBrushPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-
-              // Video Description
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -97,8 +144,6 @@ class HowToBrushPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-
-              // Steps Title
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -112,8 +157,6 @@ class HowToBrushPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-
-              // Steps
               const _BulletPoint(
                   text: 'Place your toothbrush at a 45-degree angle to the gums.'),
               const _BulletPoint(
@@ -134,7 +177,6 @@ class HowToBrushPage extends StatelessWidget {
   }
 }
 
-// Reusable bullet point widget
 class _BulletPoint extends StatelessWidget {
   final String text;
   const _BulletPoint({required this.text});

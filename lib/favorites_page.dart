@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import '../favorite_item.dart'; // Import your FavoriteItem class
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
@@ -12,7 +13,7 @@ class FavoritesPage extends StatelessWidget {
       body: ValueListenableBuilder(
         valueListenable: Hive.box('favorites').listenable(),
         builder: (context, Box box, _) {
-          List<String> favoriteItems = List<String>.from(box.get('favorites', defaultValue: <String>[]));
+          List<FavoriteItem> favoriteItems = box.values.toList().cast<FavoriteItem>();
 
           if (favoriteItems.isEmpty) {
             return const Center(child: Text("No favorites yet!"));
@@ -21,13 +22,14 @@ class FavoritesPage extends StatelessWidget {
           return ListView.builder(
             itemCount: favoriteItems.length,
             itemBuilder: (context, index) {
+              final item = favoriteItems[index];
               return ListTile(
-                title: Text(favoriteItems[index]),
+                title: Text(item.name), // Display the name
+                leading: Image.asset(item.imageUrl, width: 50, height: 50),//display image
                 trailing: IconButton(
                   icon: const Icon(Icons.delete, color: Colors.red),
                   onPressed: () {
-                    favoriteItems.removeAt(index);
-                    box.put('favorites', favoriteItems); // Update Hive
+                    box.deleteAt(index);//delete using index.
                   },
                 ),
               );

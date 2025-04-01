@@ -7,6 +7,9 @@ import 'package:test_flutter/favorites_page.dart';
 
 //for hive database for favorite function
 import 'package:hive_flutter/hive_flutter.dart';
+import 'favorite_item.dart'; // Import your FavoriteItem class
+//import 'favorite_item.g.dart'; // Import the generated adapter
+
 
 
 
@@ -16,6 +19,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter(); // Initialize Hive before running the app
+  Hive.registerAdapter(FavoriteItemAdapter()); // Register the adapter here.
   await Hive.openBox('favorites');
   runApp(const BrightBiteApp());
 }
