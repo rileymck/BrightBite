@@ -1,8 +1,58 @@
+// preventative_care_page.dart
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import '../bottom_nav_bar.dart';
+import '../favorite_item.dart';
 
-class PreventativeCarePage extends StatelessWidget {
+class PreventativeCarePage extends StatefulWidget {
   const PreventativeCarePage({super.key});
+
+  @override
+  _PreventativeCarePageState createState() => _PreventativeCarePageState();
+}
+
+class _PreventativeCarePageState extends State<PreventativeCarePage> {
+  bool isFavorite = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkIfFavorite();
+  }
+
+  Future<void> _checkIfFavorite() async {
+    final box = await Hive.openBox('favorites');
+    final favorite = box.values.cast<FavoriteItem>().firstWhere(
+        (item) => item.id == 'preventative_care',
+        orElse: () => FavoriteItem(id: '', name: '', imageUrl: ''));
+
+    setState(() {
+      isFavorite = favorite.id.isNotEmpty;
+    });
+  }
+
+  Future<void> _toggleFavorite() async {
+    final box = await Hive.openBox('favorites');
+    if (isFavorite) {
+      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
+          (item) => item.id == 'preventative_care');
+      if (index != -1) {
+        await box.deleteAt(index);
+      }
+    } else {
+      final newItem = FavoriteItem(
+        id: 'preventative_care',
+        name: 'Preventative care',
+        imageUrl: 'assets/images/brightbitelogo.png',
+      );
+      await box.add(newItem);
+    }
+
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +66,17 @@ class PreventativeCarePage extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.bookmark_border, color: Colors.white),
-            onPressed: () {
-              // TODO: Save to favorites (optional)
+          ValueListenableBuilder(
+            valueListenable: Hive.box('favorites').listenable(),
+            builder: (context, Box box, _) {
+              _checkIfFavorite();
+              return IconButton(
+                icon: Icon(
+                  isFavorite ? Icons.bookmark : Icons.bookmark_border,
+                  color: Colors.white,
+                ),
+                onPressed: _toggleFavorite,
+              );
             },
           ),
         ],

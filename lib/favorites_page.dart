@@ -8,7 +8,13 @@ import '../oral_hygiene/how_to_brush_page.dart';
 import '../oral_hygiene/how_to_clean_your_tongue_page.dart';
 import '../oral_hygiene/how_to_floss_page.dart';
 import '../oral_hygiene/what_are_interdental_aids_page.dart';
-import '../oral_hygiene/others_page.dart'; // Import OtherPage
+import '../oral_hygiene/others_page.dart'; 
+
+import '../dental_treatment/preventative_care_page.dart';
+import '../dental_treatment/composite_fillings_page.dart';
+import '../dental_treatment/crowns_page.dart';
+import '../dental_treatment/extractions_page.dart';
+import '../dental_treatment/others_page.dart';
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
@@ -66,6 +72,31 @@ class FavoritesPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const OtherPage()),
+                    );
+                  } else if (item.id == 'preventative_care') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PreventativeCarePage()),
+                    );
+                  } else if (item.id == 'composite_fillings') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CompositeFillingsPage()),
+                    );
+                  } else if (item.id == 'crowns') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CrownsPage()),
+                    );
+                  } else if (item.id == 'extractions') { // Add this condition
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ExtractionsPage()),
+                    );
+                  } else if (item.id == 'dental_treatment') { // Add this condition
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const OtherDentalTreatmentPage()),
                     );
                   }
                 },
