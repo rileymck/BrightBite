@@ -1,8 +1,58 @@
+// how_to_floss_page.dart
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import '../bottom_nav_bar.dart';
+import '../favorite_item.dart';
 
-class HowToFlossPage extends StatelessWidget {
+class HowToFlossPage extends StatefulWidget {
   const HowToFlossPage({super.key});
+
+  @override
+  _HowToFlossPageState createState() => _HowToFlossPageState();
+}
+
+class _HowToFlossPageState extends State<HowToFlossPage> {
+  bool isFavorite = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkIfFavorite();
+  }
+
+  Future<void> _checkIfFavorite() async {
+    final box = await Hive.openBox('favorites');
+    final favorite = box.values.cast<FavoriteItem>().firstWhere(
+        (item) => item.id == 'how_to_floss',
+        orElse: () => FavoriteItem(id: '', name: '', imageUrl: ''));
+
+    setState(() {
+      isFavorite = favorite.id.isNotEmpty;
+    });
+  }
+
+  Future<void> _toggleFavorite() async {
+    final box = await Hive.openBox('favorites');
+    if (isFavorite) {
+      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
+          (item) => item.id == 'how_to_floss');
+      if (index != -1) {
+        await box.deleteAt(index);
+      }
+    } else {
+      final newItem = FavoriteItem(
+        id: 'how_to_floss',
+        name: 'How to Floss',
+        imageUrl: 'assets/images/brightbitelogo.png',
+      );
+      await box.add(newItem);
+    }
+
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +66,17 @@ class HowToFlossPage extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.bookmark_border, color: Colors.white),
-            onPressed: () {
-              // Optional: Save to favorites
+          ValueListenableBuilder(
+            valueListenable: Hive.box('favorites').listenable(),
+            builder: (context, Box box, _) {
+              _checkIfFavorite();
+              return IconButton(
+                icon: Icon(
+                  isFavorite ? Icons.bookmark : Icons.bookmark_border,
+                  color: Colors.white,
+                ),
+                onPressed: _toggleFavorite,
+              );
             },
           ),
         ],
@@ -44,8 +101,6 @@ class HowToFlossPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-
-              // Watch Video Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -72,7 +127,6 @@ class HowToFlossPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -109,11 +163,26 @@ class HowToFlossPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              const _StepLabel(text: 'Wrap the Floss', description: 'Take about 18 inches of floss and wrap most of it around one middle finger, winding the rest around the other middle finger.'),
-              const _StepLabel(text: 'Grip Firmly', description: 'Hold the floss tightly between your thumbs and forefingers.'),
-              const _StepLabel(text: 'Slide Gently', description: 'Guide the floss between your teeth using a gentle rubbing motion. Avoid snapping it into the gums.'),
-              const _StepLabel(text: 'Curve into a C', description: 'When you reach the gum line, curve the floss around one tooth and slide it gently under the gumline.'),
-              const _StepLabel(text: 'Move Up & Down', description: 'Hold the floss against the tooth and move it up and down. Repeat for all teeth, including the back ones.'),
+              const _StepLabel(
+                  text: 'Wrap the Floss',
+                  description:
+                      'Take about 18 inches of floss and wrap most of it around one middle finger, winding the rest around the other middle finger.'),
+              const _StepLabel(
+                  text: 'Grip Firmly',
+                  description:
+                      'Hold the floss tightly between your thumbs and forefingers.'),
+              const _StepLabel(
+                  text: 'Slide Gently',
+                  description:
+                      'Guide the floss between your teeth using a gentle rubbing motion. Avoid snapping it into the gums.'),
+              const _StepLabel(
+                  text: 'Curve into a C',
+                  description:
+                      'When you reach the gum line, curve the floss around one tooth and slide it gently under the gumline.'),
+              const _StepLabel(
+                  text: 'Move Up & Down',
+                  description:
+                      'Hold the floss against the tooth and move it up and down. Repeat for all teeth, including the back ones.'),
               const SizedBox(height: 30),
             ],
           ),
@@ -151,4 +220,4 @@ class _StepLabel extends StatelessWidget {
       ),
     );
   }
-} 
+}

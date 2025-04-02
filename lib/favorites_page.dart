@@ -1,7 +1,14 @@
+// favorites_page.dart
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../favorite_item.dart';
-import '../oral_hygiene/how_to_brush_page.dart'; // Import the HowToBrushPage
+
+//favorite page link to actual page
+import '../oral_hygiene/how_to_brush_page.dart';
+import '../oral_hygiene/how_to_clean_your_tongue_page.dart';
+import '../oral_hygiene/how_to_floss_page.dart';
+import '../oral_hygiene/what_are_interdental_aids_page.dart';
+import '../oral_hygiene/others_page.dart'; // Import OtherPage
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
@@ -40,8 +47,27 @@ class FavoritesPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(builder: (context) => const HowToBrushPage()),
                     );
+                  } else if (item.id == 'how_to_clean_tongue') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HowToCleanYourTonguePage()),
+                    );
+                  } else if (item.id == 'how_to_floss') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HowToFlossPage()),
+                    );
+                  } else if (item.id == 'what_are_interdental_aids') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const WhatAreInterdentalAidsPage()),
+                    );
+                  } else if (item.id == 'other_page') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const OtherPage()),
+                    );
                   }
-                  // Add more conditions for other pages if needed
                 },
               );
             },
