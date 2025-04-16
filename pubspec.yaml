@@ -16,6 +16,7 @@ dependencies:
   path_provider: ^2.0.11
   json_serializable: ^6.7.1 # Ensure this is added
   webview_flutter: ^4.10.0
+  url_launcher: ^6.1.11 # or whatever the latest version is
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,11 @@ flutter:
     - assets/images/preserve_eco_friendly_toothbrush 1.png
     - assets/images/colgate_360_enamel_health_toothbrush 1.png
     - assets/images/colgate_slim_soft_ulta_compact_toothbrush 1.png
+    - assets/images/
+    # - assets/images/brightbitelogo.png
+    # - assets/images/toothbrush_toothpaste_icon.png
+    # - assets/images/child.png
+    # - assets/images/toothbrush.png
 
   fonts:
     - family: PT Serif

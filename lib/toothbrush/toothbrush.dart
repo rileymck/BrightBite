@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../bottom_nav_bar.dart';
+import '../bottom_nav_bar.dart';
 import 'manual_toothbrush_page.dart';
 import 'electric_toothbrush_page.dart';
 import 'infant_toothbrush_page.dart';
@@ -43,7 +43,7 @@ class ToothbrushPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Icon(Icons.clean_hands, size: 80, color: Colors.white),
+                     Image.asset('assets/images/toothbrush.png', width: 60, height: 60,),
                     const SizedBox(height: 10),
                     const Text(
                       'Toothbrush',
@@ -66,10 +66,10 @@ class ToothbrushPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     _buildInfoCard(context, 'Manual', const ManualToothbrushPage()),
-                    // const SizedBox(height: 10),
-                    // _buildInfoCard(context, 'Electric', const ElectricToothbrushPage()),
-                    // const SizedBox(height: 10),
-                    // _buildInfoCard(context, 'Infant', const InfantToothbrushPage()),
+                    const SizedBox(height: 10),
+                    _buildInfoCard(context, 'Electric', const ElectricToothbrushPage()),
+                    const SizedBox(height: 10),
+                    _buildInfoCard(context, 'Infant', const InfantToothbrushPage()),
                   ],
                 ),
               ),
