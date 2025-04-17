@@ -20,10 +20,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^2.0.0
   hive_generator: ^2.0.1
   build_runner: ^2.4.7
-  flutter_launcher_icons: ^0.14.3
+  webview_flutter: ^4.10.0
+  flutter_launcher_icons: ^0.13.1
 
 flutter_icons:
   android: true
@@ -39,38 +40,6 @@ flutter:
   assets:
     - assets/images/brightbitelogo.png
     - assets/images/toothbrush_toothpaste_icon.png
-    - assets/images/brushing_teeth.png
-    - assets/images/adult_people.png
-    - assets/images/back_arrow.png
-    - assets/images/child.png
-    - assets/images/crown.png
-    - assets/images/dental_chair.png
-    - assets/images/dental_picks.png
-    - assets/images/drill_tooth.png
-    - assets/images/elderly_people.png
-    - assets/images/electric_toothbrush.png
-    - assets/images/examine_tooth.png
-    - assets/images/extract_tooth.png
-    - assets/images/floss_teeth.png
-    - assets/images/life_stages.png
-    - assets/images/manual_toothbrush.png
-    - assets/images/Mouth.png
-    - assets/images/mouthrinse.png
-    - assets/images/other_treatment.png
-    - assets/images/preventive.png
-    - assets/images/string_floss.png
-    - assets/images/teen_braces.png
-    - assets/images/tongue_cleaner.png
-    - assets/images/tooth_bacteria.png
-    - assets/images/tooth_floss.png
-    - assets/images/tooth_magnify.png
-    - assets/images/tooth_toothbrush.png
-    - assets/images/toothbrush.png
-    - assets/images/GREENZLA_bamboo_toothbrush.png
-    - assets/images/oral-b_gum_care_extra_soft_toothbrush 1.png
-    - assets/images/preserve_eco_friendly__toothbrush 1.png
-    - assets/images/colgate_360_enamel_health_toothbrush 1.png
-    - assets/images/colgate_slim_soft_ulta_compact_toothbrush 1.png
 
   fonts:
     - family: PT Serif
