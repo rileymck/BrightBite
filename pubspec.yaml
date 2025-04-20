@@ -30,6 +30,9 @@ flutter:
   assets:
     - assets/images/brightbitelogo.png
     - assets/images/toothbrush_toothpaste_icon.png
+    - assets/images/tooth_toothbrush.png
+    - assets/images/manual_toothbrush.png
+
 
   fonts:
     - family: PT Serif

@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'dart:math' show min;
 import 'bottom_nav_bar.dart';
+import 'toothpaste_guide/toothpaste.dart';
 
 class ProductGuide extends StatelessWidget {
   const ProductGuide({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Get screen dimensions
     final screenSize = MediaQuery.of(context).size;
     final width = screenSize.width;
     final height = screenSize.height;
-    final isTablet = width > 600; // Simple check for tablet
+    final isTablet = width > 600;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          '', // Empty title as requested
+          '',
           style: TextStyle(
             fontFamily: 'Source Serif Pro',
             fontWeight: FontWeight.bold,
@@ -31,10 +31,9 @@ class ProductGuide extends StatelessWidget {
       ),
       backgroundColor: const Color(0xFF0051C1),
       body: SafeArea(
-        bottom: false, // Allow content to extend below safe area
+        bottom: false,
         child: Column(
           children: [
-            // Main scrollable content
             Expanded(
               child: SingleChildScrollView(
                 child: Padding(
@@ -45,10 +44,7 @@ class ProductGuide extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(
-                          height: isTablet ? height * 0.08 : height * 0.03),
-
-                      // Icon and title
+                      SizedBox(height: isTablet ? height * 0.08 : height * 0.03),
                       Image.asset(
                         'assets/images/toothbrush_toothpaste_icon.png',
                         width: min(width * 0.15, 120),
@@ -66,32 +62,24 @@ class ProductGuide extends StatelessWidget {
                           fontFamily: 'Source Serif Pro',
                         ),
                       ),
-                      SizedBox(
-                          height: isTablet ? height * 0.05 : height * 0.04),
-
-                      // Buttons
+                      SizedBox(height: isTablet ? height * 0.05 : height * 0.04),
                       _buildMenuButton(context, 'Toothbrush', isTablet),
                       SizedBox(height: height * 0.02),
                       _buildMenuButton(context, 'Toothpaste', isTablet),
                       SizedBox(height: height * 0.02),
-                      // Taller button specifically for Floss & Interdental Aids
                       _buildMenuButton(
-                          context, 'Floss &\nInterdental Aids', isTablet,
-                          multiline: true, extraHeight: true),
+                        context, 'Floss &\nInterdental Aids', isTablet,
+                        multiline: true, extraHeight: true),
                       SizedBox(height: height * 0.02),
                       _buildMenuButton(context, 'Mouthrinse', isTablet),
                       SizedBox(height: height * 0.02),
                       _buildMenuButton(context, 'Other', isTablet),
-
-                      // Space for nav bar
                       SizedBox(height: height * 0.15),
                     ],
                   ),
                 ),
               ),
             ),
-
-            // Full-width navigation bar at bottom
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
@@ -113,19 +101,14 @@ class ProductGuide extends StatelessWidget {
     );
   }
 
-  // Updated menu button with tablet adjustments and extra height option
   Widget _buildMenuButton(BuildContext context, String title, bool isTablet,
       {bool multiline = false, bool extraHeight = false}) {
-    // Calculate height based on parameters
     double buttonHeight;
     if (extraHeight) {
-      // Extra tall button for the floss & interdental aids
       buttonHeight = isTablet ? 120 : 90;
     } else if (multiline) {
-      // Standard multiline button
       buttonHeight = isTablet ? 100 : 80;
     } else {
-      // Standard single line button
       buttonHeight = isTablet ? 80 : 60;
     }
 
@@ -145,7 +128,18 @@ class ProductGuide extends StatelessWidget {
           ),
           elevation: 0,
         ),
-        onPressed: () {},
+        onPressed: () {
+          if (title == 'Toothpaste') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ToothpasteGuidePage(),
+              ),
+            );
+          } else {
+            debugPrint('$title button pressed');
+          }
+        },
         child: Text(
           title,
           textAlign: TextAlign.center,
