@@ -46,8 +46,14 @@ class OralHygienePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Icon(Icons.clean_hands,
-                        size: 80, color: Colors.white),
+                    Image.asset(
+                      'assets/images/tooth_toothbrush.png', // image asset
+                      width: 80,
+                      height: 80,
+                      color:
+                          Colors.white, // Remove if you don't want white tint
+                      fit: BoxFit.contain,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       'Oral Hygiene',
