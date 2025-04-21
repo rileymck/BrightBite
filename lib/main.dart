@@ -1,19 +1,14 @@
 // Import the material package which contains the widgets and tools needed for the app
 import 'package:flutter/material.dart';
+import 'package:test_flutter/disclaimer.dart';
 import 'dart:math' show min; // Import min function for calculating dimensions
 import 'main_page.dart'; // Import the main page widget
 import 'package:test_flutter/favorites_page.dart';
-
 
 //for hive database for favorite function
 import 'package:hive_flutter/hive_flutter.dart';
 import 'favorite_item.dart'; // Import your FavoriteItem class
 //import 'favorite_item.g.dart'; // Import the generated adapter
-
-
-
-
-
 
 // Main function that runs the app
 void main() async {
@@ -23,7 +18,6 @@ void main() async {
   await Hive.openBox('favorites');
   runApp(const BrightBiteApp());
 }
-
 
 // Root widget of the app
 class BrightBiteApp extends StatelessWidget {
@@ -36,9 +30,7 @@ class BrightBiteApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
       ),
-      routes:{
-        '/favorites': (context) => const FavoritesPage()
-      },
+      routes: {'/favorites': (context) => const FavoritesPage()},
       home: const Scaffold(
         // Scaffold widget to build the app's layout
         body: SafeArea(
@@ -165,10 +157,10 @@ class WelcomeScreen extends StatelessWidget {
       ),
       child: TextButton(
         onPressed: () {
-          // Navigate to the main page
+          // Navigate to the disclaimer page
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const MainPage()),
+            MaterialPageRoute(builder: (context) => const DisclaimerPage()),
           );
         },
         style: TextButton.styleFrom(

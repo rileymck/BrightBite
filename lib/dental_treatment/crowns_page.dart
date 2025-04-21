@@ -35,8 +35,10 @@ class _CrownsPageState extends State<CrownsPage> {
   Future<void> _toggleFavorite() async {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
-      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
-          (item) => item.id == 'crowns');
+      final index = box.values
+          .cast<FavoriteItem>()
+          .toList()
+          .indexWhere((item) => item.id == 'crowns');
       if (index != -1) {
         await box.deleteAt(index);
       }
@@ -89,7 +91,13 @@ class _CrownsPageState extends State<CrownsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(Icons.emoji_events, size: 60, color: Colors.white),
+              Image.asset(
+                'assets/images/crown.png', // image asset
+                width: 60,
+                height: 60,
+                color: Colors.white, // Remove if you don't want white tint
+                fit: BoxFit.contain,
+              ),
               const SizedBox(height: 10),
               const Text(
                 'Dental Crowns',

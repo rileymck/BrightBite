@@ -36,8 +36,10 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
       // Remove from favorites
-      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
-          (item) => item.id == 'how_to_brush'); // Find the index
+      final index = box.values
+          .cast<FavoriteItem>()
+          .toList()
+          .indexWhere((item) => item.id == 'how_to_brush'); // Find the index
       if (index != -1) {
         await box.deleteAt(index); // Delete the item
       }
@@ -45,8 +47,9 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
       // Add to favorites
       final newItem = FavoriteItem(
         id: 'how_to_brush',
-        name: 'How to brush',
-        imageUrl: 'assets/images/brightbitelogo.png', // Or whatever image you want
+        name: 'How to Brush',
+        imageUrl:
+            'assets/images/brightbitelogo.png', // Or whatever image you want
       );
       await box.add(newItem);
     }
@@ -89,12 +92,17 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(Icons.brush, size: 60, color: Colors.white),
+              Image.asset(
+                'assets/images/tooth_toothbrush.png', //Image path here
+                width: 60,
+                height: 60,
+                //color: Colors.white, // Remove if you don't want white tint
+                fit: BoxFit.contain,
+              ),
               const SizedBox(height: 10),
               const Text(
-                'How to brush',
+                'How to Brush',
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
@@ -166,7 +174,8 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
               ),
               const SizedBox(height: 10),
               const _BulletPoint(
-                  text: 'Place your toothbrush at a 45-degree angle to the gums.'),
+                  text:
+                      'Place your toothbrush at a 45-degree angle to the gums.'),
               const _BulletPoint(
                   text:
                       'Gently move the brush back and forth in short (tooth-wide) strokes.'),

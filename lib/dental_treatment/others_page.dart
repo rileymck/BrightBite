@@ -37,8 +37,10 @@ class _OtherDentalTreatmentPageState extends State<OtherDentalTreatmentPage> {
   Future<void> _toggleFavorite() async {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
-      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
-          (item) => item.id == 'dental_treatment');
+      final index = box.values
+          .cast<FavoriteItem>()
+          .toList()
+          .indexWhere((item) => item.id == 'dental_treatment');
       if (index != -1) {
         await box.deleteAt(index);
       }
@@ -90,12 +92,18 @@ class _OtherDentalTreatmentPageState extends State<OtherDentalTreatmentPage> {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Center(
-                child: Icon(Icons.description, size: 60, color: Colors.white),
+                child: Image.asset(
+                  'assets/images/other_treatment.png', //image asset
+                  width: 60,
+                  height: 60,
+                  color: Colors.white, // Remove if you don't want white tint
+                  fit: BoxFit.contain,
+                ),
               ),
-              SizedBox(height: 10),
-              Center(
+              const SizedBox(height: 10),
+              const Center(
                 child: Text(
                   'Others',
                   style: TextStyle(
@@ -106,37 +114,37 @@ class _OtherDentalTreatmentPageState extends State<OtherDentalTreatmentPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
-              Text(
+              const SizedBox(height: 30),
+              const Text(
                 'Implants:',
                 style: _headerStyle,
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Veneers:',
                 style: _headerStyle,
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Root Canal (Endodontic Therapy):',
                 style: _headerStyle,
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Orthodontics:',
                 style: _headerStyle,
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Partials and Dentures:',
                 style: _headerStyle,
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Teeth Whitening:',
                 style: _headerStyle,
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
             ],
           ),
         ),

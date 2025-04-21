@@ -76,7 +76,7 @@ class ProductGuide extends StatelessWidget {
                       SizedBox(height: height * 0.02),
                       // Taller button specifically for Floss & Interdental Aids
                       _buildMenuButton(
-                          context, 'Floss &\nInterdental Aids', isTablet,
+                          context, 'Floss &\nFloss Alternatives', isTablet,
                           multiline: true, extraHeight: true),
                       SizedBox(height: height * 0.02),
                       _buildMenuButton(context, 'Mouthrinse', isTablet),
