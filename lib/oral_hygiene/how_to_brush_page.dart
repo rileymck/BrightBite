@@ -1,9 +1,10 @@
 // how_to_brush_page.dart
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart'; // Import Hive
-import 'package:hive_flutter/hive_flutter.dart'; // Import Hive Flutter for ValueListenableBuilder
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import '../bottom_nav_bar.dart';
-import '../favorite_item.dart'; // Import your FavoriteItem class
+import '../favorite_item.dart';
+import '../video_player_page.dart';
 
 class HowToBrushPage extends StatefulWidget {
   const HowToBrushPage({super.key});
@@ -13,7 +14,7 @@ class HowToBrushPage extends StatefulWidget {
 }
 
 class _HowToBrushPageState extends State<HowToBrushPage> {
-  bool isFavorite = false; // Track favorite status
+  bool isFavorite = false;
 
   @override
   void initState() {
@@ -35,18 +36,16 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
   Future<void> _toggleFavorite() async {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
-      // Remove from favorites
       final index = box.values.cast<FavoriteItem>().toList().indexWhere(
-          (item) => item.id == 'how_to_brush'); // Find the index
+          (item) => item.id == 'how_to_brush');
       if (index != -1) {
-        await box.deleteAt(index); // Delete the item
+        await box.deleteAt(index);
       }
     } else {
-      // Add to favorites
       final newItem = FavoriteItem(
         id: 'how_to_brush',
         name: 'How to brush',
-        imageUrl: 'assets/images/brightbitelogo.png', // Or whatever image you want
+        imageUrl: 'assets/images/brightbitelogo.png',
       );
       await box.add(newItem);
     }
@@ -71,7 +70,7 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
           ValueListenableBuilder(
             valueListenable: Hive.box('favorites').listenable(),
             builder: (context, Box box, _) {
-              _checkIfFavorite(); // Call _checkIfFavorite() here
+              _checkIfFavorite();
               return IconButton(
                 icon: Icon(
                   isFavorite ? Icons.bookmark : Icons.bookmark_border,
@@ -103,6 +102,8 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
                 ),
               ),
               const SizedBox(height: 20),
+
+              // ✅ Watch Video Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -115,7 +116,14 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
                     ),
                   ),
                   onPressed: () {
-                    // TODO: Add video player
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const VideoPlayerPage(
+                          videoUrl: 'https://www.youtube.com/watch?v=xm9c5HAUBpY',
+                        ),
+                      ),
+                    );
                   },
                   child: const Text(
                     'Watch Video',
@@ -129,6 +137,7 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
                 ),
               ),
               const SizedBox(height: 20),
+
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -152,6 +161,7 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
                 ),
               ),
               const SizedBox(height: 20),
+
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
