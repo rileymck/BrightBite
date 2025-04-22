@@ -1,13 +1,13 @@
 # 🦷 BrightBite
 
 **Table of Contents**  
-- [Introduction](#-introduction)  
-- [Tech Stack](#-tech-stack)  
-- [Features](#-features)  
-- [Quick Start](#-quick-start)  
-- [Code Snippets to Copy](#-code-snippets-to-copy)  
-- [Assets](#-assets)  
-- [More](#-more)
+- [Introduction](#introduction)
+- [Tech Stack](#tech-stack)
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Assets](#assets)
+- [More](#more)
+
 
 ---
 
@@ -16,7 +16,7 @@ Built with Flutter, **BrightBite** is an educational dental app designed to clos
 
 ---
 
-## ⚙Tech Stack  
+## Tech Stack  
 - **Flutter / Dart** – Cross-platform app development  
 - **Figma** – UI/UX design and prototyping  
 - **GitHub** – Version control and collaboration  
