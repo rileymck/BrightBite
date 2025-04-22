@@ -14,6 +14,8 @@
 ## Introduction  
 Built with Flutter, **BrightBite** is an educational dental app designed to close the gap in dental health literacy. It provides patients with clear, engaging, and accessible oral health information beyond the dentist’s office. From daily hygiene tips to treatment explanations and age-specific guidance, BrightBite empowers users to take charge of their oral hygiene confidently and conveniently.
 
+![BrightBite Logo](pics/brightbite-logo.png)
+
 ---
 
 ## Tech Stack  
