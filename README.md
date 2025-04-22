@@ -2,7 +2,7 @@
 
 **Table of Contents**  
 - [Introduction](#-introduction)  
-- ⚙[Tech Stack](#-tech-stack)  
+- [Tech Stack](#-tech-stack)  
 - [Features](#-features)  
 - [Quick Start](#-quick-start)  
 - [Code Snippets to Copy](#-code-snippets-to-copy)  
