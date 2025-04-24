@@ -4,6 +4,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../bottom_nav_bar.dart';
 import '../favorite_item.dart';
+import '../video_player_page.dart';
 
 class ExtractionsPage extends StatefulWidget {
   const ExtractionsPage({super.key});
@@ -102,7 +103,7 @@ class _ExtractionsPageState extends State<ExtractionsPage> {
               ),
               const SizedBox(height: 20),
 
-              // Watch Video Button
+              // ✅ Watch Video Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -115,7 +116,14 @@ class _ExtractionsPageState extends State<ExtractionsPage> {
                     ),
                   ),
                   onPressed: () {
-                    // TODO: Add video functionality here
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const VideoPlayerPage(
+                          videoUrl: 'https://youtu.be/h_NpXJMjZ9E?si=1iPT82yOpqRVVspZ',
+                        ),
+                      ),
+                    );
                   },
                   child: const Text(
                     'watch video',

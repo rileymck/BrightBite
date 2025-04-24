@@ -1,7 +1,6 @@
 // favorites_page.dart
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:test_flutter/toothbrush/toothbrush.dart';
 import '../favorite_item.dart';
 
 //favorite page link to actual page
@@ -16,11 +15,6 @@ import '../dental_treatment/composite_fillings_page.dart';
 import '../dental_treatment/crowns_page.dart';
 import '../dental_treatment/extractions_page.dart';
 import '../dental_treatment/others_page.dart';
-
-// import 'toothbrush_page/toothbrush.dart';
-import '../toothbrush/manual_toothbrush_page.dart';
-import '../toothbrush/electric_toothbrush_page.dart';
-import '../toothbrush/infant_toothbrush_page.dart';
 
 class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
@@ -103,16 +97,6 @@ class FavoritesPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const OtherDentalTreatmentPage()),
-                    );
-                  } else if (item.id == 'toothbrush') { // Add this condition
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ToothbrushPage()),
-                    );
-                  }else if (item.id == 'manual_toothbrush') { // Add this condition
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ManualToothbrushPage()),
                     );
                   }
                 },
