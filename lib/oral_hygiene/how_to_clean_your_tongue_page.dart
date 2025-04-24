@@ -4,6 +4,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../bottom_nav_bar.dart';
 import '../favorite_item.dart';
+import '../video_player_page.dart';
 
 class HowToCleanYourTonguePage extends StatefulWidget {
   const HowToCleanYourTonguePage({super.key});
@@ -103,6 +104,8 @@ class _HowToCleanYourTonguePageState extends State<HowToCleanYourTonguePage> {
                 ),
               ),
               const SizedBox(height: 20),
+
+              // ✅ Watch Video Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -115,7 +118,14 @@ class _HowToCleanYourTonguePageState extends State<HowToCleanYourTonguePage> {
                     ),
                   ),
                   onPressed: () {
-                    // TODO: Add video player
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const VideoPlayerPage(
+                          videoUrl: 'https://www.youtube.com/watch?v=FBc6bU-v8ZQqQ',
+                        ),
+                      ),
+                    );
                   },
                   child: const Text(
                     'Watch Video',
@@ -128,6 +138,7 @@ class _HowToCleanYourTonguePageState extends State<HowToCleanYourTonguePage> {
                   ),
                 ),
               ),
+
               const SizedBox(height: 20),
               const Align(
                 alignment: Alignment.centerLeft,
