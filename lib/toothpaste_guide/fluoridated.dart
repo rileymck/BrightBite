@@ -79,31 +79,7 @@ class FluoridatedToothpastePage extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 30),
-
-                  // Subheading
-                  const Text(
-                    'Below is ADA approved and top',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'Source Serif Pro',
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  // Colgate image
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.asset(
-                      'assets/images/colgate_toothpaste.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-
-                  const SizedBox(height: 20),
+                  
                 ],
               ),
             );
