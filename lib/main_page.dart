@@ -5,7 +5,6 @@ import 'dart:math' show min;
 // Import custom page widgets that we'll navigate to
 import 'smile_academy.dart';
 import 'product_guide.dart';
-
 //for hive database for favorite function
 import 'package:hive/hive.dart';
 
