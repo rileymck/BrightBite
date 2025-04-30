@@ -35,8 +35,10 @@ class _PreventativeCarePageState extends State<PreventativeCarePage> {
   Future<void> _toggleFavorite() async {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
-      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
-          (item) => item.id == 'preventative_care');
+      final index = box.values
+          .cast<FavoriteItem>()
+          .toList()
+          .indexWhere((item) => item.id == 'preventative_care');
       if (index != -1) {
         await box.deleteAt(index);
       }
@@ -89,10 +91,16 @@ class _PreventativeCarePageState extends State<PreventativeCarePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(Icons.health_and_safety, size: 60, color: Colors.white),
+              Image.asset(
+                'assets/images/preventive.png', // image asset
+                width: 60,
+                height: 60,
+                color: Colors.white, // Remove if you don't want white tint
+                fit: BoxFit.contain,
+              ),
               const SizedBox(height: 10),
               const Text(
-                'Preventative care',
+                'Preventative Care',
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,

@@ -35,8 +35,10 @@ class _HowToFlossPageState extends State<HowToFlossPage> {
   Future<void> _toggleFavorite() async {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
-      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
-          (item) => item.id == 'how_to_floss');
+      final index = box.values
+          .cast<FavoriteItem>()
+          .toList()
+          .indexWhere((item) => item.id == 'how_to_floss');
       if (index != -1) {
         await box.deleteAt(index);
       }
@@ -87,9 +89,14 @@ class _HowToFlossPageState extends State<HowToFlossPage> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(Icons.medical_services, size: 60, color: Colors.white),
+              Image.asset(
+                'assets/images/string_floss.png', //Image path here
+                width: 60,
+                height: 60,
+                //color: Colors.white, // Remove if you don't want white tint
+                fit: BoxFit.contain,
+              ),
               const SizedBox(height: 10),
               const Text(
                 'How to Floss',

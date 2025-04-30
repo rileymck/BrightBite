@@ -35,8 +35,10 @@ class _CompositeFillingsPageState extends State<CompositeFillingsPage> {
   Future<void> _toggleFavorite() async {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
-      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
-          (item) => item.id == 'composite_fillings');
+      final index = box.values
+          .cast<FavoriteItem>()
+          .toList()
+          .indexWhere((item) => item.id == 'composite_fillings');
       if (index != -1) {
         await box.deleteAt(index);
       }
@@ -89,7 +91,13 @@ class _CompositeFillingsPageState extends State<CompositeFillingsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(Icons.construction, size: 60, color: Colors.white),
+              Image.asset(
+                'assets/images/drill_tooth.png', // image asset
+                width: 60,
+                height: 60,
+                color: Colors.white, // Remove if you don't want white tint
+                fit: BoxFit.contain,
+              ),
               const SizedBox(height: 10),
               const Text(
                 'Composite Fillings',
