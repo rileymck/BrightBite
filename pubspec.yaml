@@ -17,6 +17,7 @@ dependencies:
   json_serializable: ^6.7.1 # Ensure this is added
   webview_flutter: ^4.10.0
   url_launcher: ^6.1.11 # or whatever the latest version is
+  photo_view: ^0.14.0  # Added from main branch
 
 dev_dependencies:
   flutter_test:
@@ -24,7 +25,6 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   hive_generator: ^2.0.1
   build_runner: ^2.4.7
-  webview_flutter: ^4.10.0
   flutter_launcher_icons: ^0.13.1
 
 flutter_icons:
@@ -37,19 +37,24 @@ flutter_icons:
 flutter:
   uses-material-design: true
 
-  # Add this section for your images
+  # This section for images
   assets:
     - assets/images/brightbitelogo.png
     - assets/images/toothbrush_toothpaste_icon.png
+
 
     - assets/images/tooth_toothbrush.png
     - assets/images/manual_toothbrush.png
 
 
     # - assets/images/brushing_teeth.png
+
     - assets/images/adult_people.png
+    - assets/images/baby.png 
     - assets/images/back_arrow.png
     - assets/images/child.png
+    - assets/images/colgate_360_toothbrush.png
+    - assets/images/colgate_slim_soft_toothbrush.png
     - assets/images/crown.png
     - assets/images/dental_chair.png
     - assets/images/dental_picks.png
@@ -59,12 +64,16 @@ flutter:
     - assets/images/examine_tooth.png
     - assets/images/extract_tooth.png
     - assets/images/floss_teeth.png
+    - assets/images/GREENZLA_bamboo_toothbrush.png
     - assets/images/life_stages.png
     - assets/images/manual_toothbrush.png
     - assets/images/Mouth.png
     - assets/images/mouthrinse.png
+    - assets/images/oral-b_gum_care_toothbrush.png
     - assets/images/other_treatment.png
     - assets/images/preventive.png
+    - assets/images/preserve_eco_friendly_toothbrush.png
+    - assets/images/sensitive.png
     - assets/images/string_floss.png
     - assets/images/teen_braces.png
     - assets/images/tongue_cleaner.png
@@ -73,16 +82,7 @@ flutter:
     - assets/images/tooth_magnify.png
     - assets/images/tooth_toothbrush.png
     - assets/images/toothbrush.png
-    # - assets/images/GREENZLA_bamboo_toothbrush 1.png
-    # - assets/images/oral-b_gum_care_extra_soft_toothbrush_1.png
-    # - assets/images/preserve_eco_friendly_toothbrush_1.png
-    # - assets/images/colgate_360_enamel_health_toothbrush_1.png
-    # - assets/images/colgate_slim_soft_ulta_compact_toothbrush 1.png
-    # - assets/images/
-    - assets/images/brightbitelogo.png
-    - assets/images/toothbrush_toothpaste_icon.png
-    - assets/images/child.png
-    - assets/images/toothbrush.png
+    - assets/images/water_flosser.png 
 
   fonts:
     - family: PT Serif

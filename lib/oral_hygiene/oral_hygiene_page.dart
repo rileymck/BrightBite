@@ -6,7 +6,6 @@ import 'what_are_interdental_aids_page.dart';
 import 'how_to_clean_your_tongue_page.dart';
 import 'others_page.dart';
 
-
 class OralHygienePage extends StatelessWidget {
   const OralHygienePage({super.key});
 
@@ -39,13 +38,22 @@ class OralHygienePage extends StatelessWidget {
             Expanded(
               child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(
-                  horizontal: isTablet ? screenSize.width * 0.15 : screenSize.width * 0.08,
+                  horizontal: isTablet
+                      ? screenSize.width * 0.15
+                      : screenSize.width * 0.08,
                   vertical: isTablet ? 30 : 20,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Icon(Icons.clean_hands, size: 80, color: Colors.white),
+                    Image.asset(
+                      'assets/images/tooth_toothbrush.png', // image asset
+                      width: 80,
+                      height: 80,
+                      color:
+                          Colors.white, // Remove if you don't want white tint
+                      fit: BoxFit.contain,
+                    ),
                     const SizedBox(height: 10),
                     const Text(
                       'Oral Hygiene',
@@ -67,13 +75,17 @@ class OralHygienePage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    _buildInfoCard(context, 'Brushing Technique', const HowToBrushPage()),
+                    _buildInfoCard(
+                        context, 'Brushing Technique', const HowToBrushPage()),
                     const SizedBox(height: 10),
-                    _buildInfoCard(context, 'How to Floss', const HowToFlossPage()),
+                    _buildInfoCard(
+                        context, 'How to Floss', const HowToFlossPage()),
                     const SizedBox(height: 10),
-                    _buildInfoCard(context, 'What are Interdental Aids', const WhatAreInterdentalAidsPage()),
+                    _buildInfoCard(context, 'What Are Floss Alternatives?',
+                        const WhatAreInterdentalAidsPage()),
                     const SizedBox(height: 10),
-                    _buildInfoCard(context, 'How to Clean Your Tongue', const HowToCleanYourTonguePage()),
+                    _buildInfoCard(context, 'How to Clean Your Tongue',
+                        const HowToCleanYourTonguePage()),
                     const SizedBox(height: 10),
                     _buildInfoCard(context, 'Other', const OtherPage()),
                   ],

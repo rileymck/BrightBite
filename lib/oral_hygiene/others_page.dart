@@ -1,4 +1,3 @@
-// other_page.dart
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -35,8 +34,10 @@ class _OtherPageState extends State<OtherPage> {
   Future<void> _toggleFavorite() async {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
-      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
-          (item) => item.id == 'other_page');
+      final index = box.values
+          .cast<FavoriteItem>()
+          .toList()
+          .indexWhere((item) => item.id == 'other_page');
       if (index != -1) {
         await box.deleteAt(index);
       }
@@ -88,12 +89,18 @@ class _OtherPageState extends State<OtherPage> {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Center(
-                child: Icon(Icons.public, size: 60, color: Colors.white),
+                child: Image.asset(
+                  'assets/images/tooth_bacteria.png', // Use your image path here
+                  width: 60,
+                  height: 60,
+                  color: Colors.white, // Remove if you don't want white tint
+                  fit: BoxFit.contain,
+                ),
               ),
-              SizedBox(height: 10),
-              Center(
+              const SizedBox(height: 10),
+              const Center(
                 child: Text(
                   'Other',
                   style: TextStyle(
@@ -104,8 +111,8 @@ class _OtherPageState extends State<OtherPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
-              Text(
+              const SizedBox(height: 30),
+              const Text(
                 'Oral Probiotics:',
                 style: TextStyle(
                   fontSize: 18,
@@ -114,7 +121,7 @@ class _OtherPageState extends State<OtherPage> {
                   fontFamily: 'Source Serif Pro',
                 ),
               ),
-              Text(
+              const Text(
                 "Oral probiotics are good bacteria that help keep your mouth healthy by balancing the natural microbiome. They can reduce bad breath, fight harmful bacteria, and even support your gums and teeth.",
                 style: TextStyle(
                   color: Colors.white,
@@ -123,8 +130,8 @@ class _OtherPageState extends State<OtherPage> {
                   fontFamily: 'Source Serif Pro',
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Xylitol:',
                 style: TextStyle(
                   fontSize: 18,
@@ -133,8 +140,8 @@ class _OtherPageState extends State<OtherPage> {
                   fontFamily: 'Source Serif Pro',
                 ),
               ),
-              Text(
-                "Xylitol is a natural sweetener that’s actually good for your teeth! It helps prevent cavities by reducing the growth of harmful bacteria in your mouth.",
+              const Text(
+                "Xylitol is a natural sweetener that's actually good for your teeth! It helps prevent cavities by reducing the growth of harmful bacteria in your mouth.",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
@@ -142,8 +149,8 @@ class _OtherPageState extends State<OtherPage> {
                   fontFamily: 'Source Serif Pro',
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Natural Toothpaste:\nHydroxyapatite',
                 style: TextStyle(
                   fontSize: 18,
@@ -152,7 +159,7 @@ class _OtherPageState extends State<OtherPage> {
                   fontFamily: 'Source Serif Pro',
                 ),
               ),
-              Text(
+              const Text(
                 "Hydroxyapatite is a natural mineral that helps strengthen and rebuild tooth enamel. It's a safe and effective alternative to fluoride, making it perfect for those seeking a more natural toothpaste option.",
                 style: TextStyle(
                   color: Colors.white,
@@ -161,7 +168,7 @@ class _OtherPageState extends State<OtherPage> {
                   fontFamily: 'Source Serif Pro',
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
             ],
           ),
         ),

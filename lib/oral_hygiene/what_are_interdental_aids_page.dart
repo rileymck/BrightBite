@@ -1,4 +1,3 @@
-// what_are_interdental_aids_page.dart
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -37,15 +36,17 @@ class _WhatAreInterdentalAidsPageState
   Future<void> _toggleFavorite() async {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
-      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
-          (item) => item.id == 'what_are_interdental_aids');
+      final index = box.values
+          .cast<FavoriteItem>()
+          .toList()
+          .indexWhere((item) => item.id == 'what_are_interdental_aids');
       if (index != -1) {
         await box.deleteAt(index);
       }
     } else {
       final newItem = FavoriteItem(
         id: 'what_are_interdental_aids',
-        name: 'What are interdental aids',
+        name: 'What Are Floss Alternatives?',
         imageUrl: 'assets/images/brightbitelogo.png',
       );
       await box.add(newItem);
@@ -91,10 +92,16 @@ class _WhatAreInterdentalAidsPageState
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(Icons.cleaning_services, size: 60, color: Colors.white),
+              Image.asset(
+                'assets/images/water_flosser.png', //Image path here
+                width: 60,
+                height: 60,
+                //color: Colors.white, // Remove if you don't want white tint
+                fit: BoxFit.contain,
+              ),
               const SizedBox(height: 10),
               const Text(
-                'What are\ninterdental aids',
+                'What Are\nFloss Alternatives?',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 26,
@@ -144,7 +151,7 @@ class _WhatAreInterdentalAidsPageState
               ),
               const SizedBox(height: 5),
               const Text(
-                "Brushing isn’t enough? Interdental brushes and flossers step in where your toothbrush can't! This video introduces simple tools that can make a huge difference in keeping your teeth and gums healthy.",
+                "String floss isn't working out? Interdental brushes and water flossers step in where your toothbrush and string floss can't! This video introduces simple tools that can make a huge difference in keeping your teeth and gums healthy.",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,

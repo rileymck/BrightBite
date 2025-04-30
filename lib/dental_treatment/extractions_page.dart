@@ -35,8 +35,10 @@ class _ExtractionsPageState extends State<ExtractionsPage> {
   Future<void> _toggleFavorite() async {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
-      final index = box.values.cast<FavoriteItem>().toList().indexWhere(
-          (item) => item.id == 'extractions');
+      final index = box.values
+          .cast<FavoriteItem>()
+          .toList()
+          .indexWhere((item) => item.id == 'extractions');
       if (index != -1) {
         await box.deleteAt(index);
       }
@@ -89,7 +91,13 @@ class _ExtractionsPageState extends State<ExtractionsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(Icons.remove_circle_outline, size: 60, color: Colors.white),
+              Image.asset(
+                'assets/images/extract_tooth.png', // Replace with your desired image
+                width: 60,
+                height: 60,
+                color: Colors.white, // Remove if you don't want white tint
+                fit: BoxFit.contain,
+              ),
               const SizedBox(height: 10),
               const Text(
                 'Tooth Extractions',
