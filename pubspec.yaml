@@ -41,6 +41,14 @@ flutter:
   assets:
     - assets/images/brightbitelogo.png
     - assets/images/toothbrush_toothpaste_icon.png
+
+
+    - assets/images/tooth_toothbrush.png
+    - assets/images/manual_toothbrush.png
+
+
+    # - assets/images/brushing_teeth.png
+
     - assets/images/adult_people.png
     - assets/images/baby.png 
     - assets/images/back_arrow.png

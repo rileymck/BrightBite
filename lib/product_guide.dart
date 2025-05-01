@@ -1,50 +1,47 @@
 // Import required Flutter packages and custom pages
 import 'package:flutter/material.dart';
-import 'package:test_flutter/Other%20Products/tongue_scrapers.dart';
+import 'package:test_flutter/Other%20Products/tongue_scrapers.dart'; 
 import 'dart:math' show min;
+
 import 'bottom_nav_bar.dart';
+import 'toothpaste_guide/toothpaste.dart';
 import 'toothbrush/toothbrush.dart';
 import 'Mouthrisnse/mouthrinse_page.dart';
 import 'Other Products/other_products_page.dart';
-// Need to create or import a FlossAlternativesPage component
-// import 'floss/floss_alternatives_page.dart';
+import 'floss_alternatives/floss_alt.dart';
 
-// Main ProductGuide widget for displaying purchasing guides
 class ProductGuide extends StatelessWidget {
   const ProductGuide({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Get screen dimensions for responsive design
     final screenSize = MediaQuery.of(context).size;
     final width = screenSize.width;
     final height = screenSize.height;
-    final isTablet = width > 600; // Simple check for tablet devices
+    final isTablet = width > 600;
 
     return Scaffold(
-      // App bar configuration
       appBar: AppBar(
         title: const Text(
-          '', // Empty title as requested
+          '',
           style: TextStyle(
             fontFamily: 'Source Serif Pro',
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: const Color(0xFF0051C1), // Brand blue color
-        elevation: 0, // No shadow
+        backgroundColor: const Color(0xFF0051C1),
+        elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.of(context).pop(), // Back navigation
+          onPressed: () => Navigator.of(context).pop(),
         ),
       ),
-      backgroundColor: const Color(0xFF0051C1), // Background color
-      bottomNavigationBar: const BottomNavBar(), // Custom bottom navigation
+      backgroundColor: const Color(0xFF0051C1),
+      bottomNavigationBar: const BottomNavBar(), // ✅ Only one nav bar kept
       body: SafeArea(
-        bottom: false, // Allow content to extend below safe area
+        bottom: false,
         child: Column(
           children: [
-            // Main scrollable content area
             Expanded(
               child: SingleChildScrollView(
                 child: Padding(
@@ -55,11 +52,7 @@ class ProductGuide extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // Top spacing
-                      SizedBox(
-                          height: isTablet ? height * 0.08 : height * 0.03),
-
-                      // Icon at the top
+                      SizedBox(height: isTablet ? height * 0.08 : height * 0.03),
                       Image.asset(
                         'assets/images/toothbrush_toothpaste_icon.png',
                         width: min(width * 0.15, 120),
@@ -67,10 +60,8 @@ class ProductGuide extends StatelessWidget {
                         color: Colors.white,
                       ),
                       SizedBox(height: height * 0.02),
-
-                      // Page title
                       Text(
-                        'Product Purchasing Guide', // Changed from 'Product Guide' to 'Product Purchasing Guide'
+                        'Product Purchasing Guide',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: isTablet ? 36 : 28,
@@ -79,28 +70,19 @@ class ProductGuide extends StatelessWidget {
                           fontFamily: 'Source Serif Pro',
                         ),
                       ),
-                      SizedBox(
-                          height: isTablet ? height * 0.05 : height * 0.04),
-
-                      // Product category buttons - each navigates to a different page
-                      _buildMenuButton(context, 'Toothbrush', isTablet,
-                          const ToothbrushPage()),
+                      SizedBox(height: isTablet ? height * 0.05 : height * 0.04),
+                      _buildMenuButton(context, 'Toothbrush', isTablet, const ToothbrushPage()),
                       SizedBox(height: height * 0.02),
-
-                      // Note: You'll need to create a FlossAlternativesPage component
-                      // If you don't have it yet, you can use null temporarily
-                      _buildMenuButton(context, 'Floss &\nFloss Alternatives',
-                          isTablet, null),
+                      _buildMenuButton(context, 'Toothpaste', isTablet, const ToothpasteGuidePage()),
                       SizedBox(height: height * 0.02),
-
-                      _buildMenuButton(context, 'Mouthrinse', isTablet,
-                          const MouthrinsePage()),
+                      _buildMenuButton(
+                        context,
+                        'Floss & Interdental Aids',
+                        isTablet, const FlossAlternativesPage()),
                       SizedBox(height: height * 0.02),
-
-                      _buildMenuButton(context, 'Other', isTablet,
-                          const OtherProductsPage()),
-
-                      // Space for bottom navigation bar
+                      _buildMenuButton(context, 'Mouthrinse', isTablet, const MouthrinsePage()),
+                      SizedBox(height: height * 0.02),
+                      _buildMenuButton(context, 'Other', isTablet, const OtherProductsPage()),
                       SizedBox(height: height * 0.15),
                     ],
                   ),
@@ -113,21 +95,14 @@ class ProductGuide extends StatelessWidget {
     );
   }
 
-  // Helper method to build menu buttons
-  // Parameters:
-  // - context: The build context
-  // - title: Text to display on the button
-  // - isTablet: Boolean flag for tablet-specific sizing
-  // - page: The widget to navigate to when pressed
   Widget _buildMenuButton(
-      BuildContext context, String title, bool isTablet, Widget? page) {
-    // Adjust button height based on content
-    double buttonHeight = isTablet ? 100 : 80;
-
-    // For multiline text (like "Floss & Floss Alternatives"), increase height
-    if (title.contains('\n')) {
-      buttonHeight = isTablet ? 120 : 90;
-    }
+    BuildContext context,
+    String title,
+    bool isTablet,
+    Widget? page, {
+    bool multiline = false,
+  }) {
+    double buttonHeight = multiline ? (isTablet ? 100 : 90) : (isTablet ? 80 : 70);
 
     return SizedBox(
       width: double.infinity,
@@ -146,11 +121,21 @@ class ProductGuide extends StatelessWidget {
           elevation: 0,
         ),
         onPressed: () {
-          if (page != null) {
+          if (title == 'Toothpaste') {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => page),
+              MaterialPageRoute(
+                builder: (context) => const ToothpasteGuidePage(),
+              ),
             );
+          } else {
+            debugPrint('$title button pressed');
+            if (page != null) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => page),
+              );
+            }
           }
         },
         child: Text(
@@ -158,7 +143,7 @@ class ProductGuide extends StatelessWidget {
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.black,
-            fontSize: isTablet ? 30 : 24, // Increased font size
+            fontSize: isTablet ? 30 : 24,
             fontWeight: FontWeight.bold,
             fontFamily: 'Source Serif Pro',
           ),
