@@ -3,7 +3,13 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoPlayerPage extends StatefulWidget {
   final String videoUrl;
-  const VideoPlayerPage({super.key, required this.videoUrl, required String title});
+  final String title;
+
+  const VideoPlayerPage({
+    super.key,
+    required this.videoUrl,
+    required this.title,
+  });
 
   @override
   State<VideoPlayerPage> createState() => _VideoPlayerPageState();
@@ -34,7 +40,7 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("How to Brush")),
+      appBar: AppBar(title: Text(widget.title)),
       body: YoutubePlayerBuilder(
         player: YoutubePlayer(controller: _controller),
         builder: (context, player) {
@@ -44,7 +50,7 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
               const Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text(
-                  "Watch this quick guide to learn the correct brushing technique!",
+                  "Watch this video to learn the proper technique!",
                   style: TextStyle(fontSize: 16),
                 ),
               ),
