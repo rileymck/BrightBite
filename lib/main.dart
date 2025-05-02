@@ -70,7 +70,7 @@ class WelcomeScreen extends StatelessWidget {
             // Return the welcome screen content
             return SingleChildScrollView(
               // SingleChildScrollView to avoid overflow
-              child: Container(
+              child: SizedBox(
                 // Use constraints instead of size for more accurate dimensions
                 width: maxWidth, // Set the width to the maximum width
                 height: isLandscape ? maxHeight : maxHeight,

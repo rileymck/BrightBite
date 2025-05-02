@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import '../bottom_nav_bar.dart';
-import '../favorite_item.dart'; // Import your FavoriteItem class
+// Import your FavoriteItem class
 
 class BridgeBracesPage extends StatelessWidget {
   const BridgeBracesPage({super.key});

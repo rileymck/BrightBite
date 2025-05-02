@@ -1,9 +1,9 @@
-// how_to_clean_your_tongue_page.dart
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../bottom_nav_bar.dart';
 import '../favorite_item.dart';
+import '../video_player_page.dart'; // ✅ Required for embedded video
 
 class HowToCleanYourTonguePage extends StatefulWidget {
   const HowToCleanYourTonguePage({super.key});
@@ -25,8 +25,9 @@ class _HowToCleanYourTonguePageState extends State<HowToCleanYourTonguePage> {
   Future<void> _checkIfFavorite() async {
     final box = await Hive.openBox('favorites');
     final favorite = box.values.cast<FavoriteItem>().firstWhere(
-        (item) => item.id == 'how_to_clean_tongue',
-        orElse: () => FavoriteItem(id: '', name: '', imageUrl: ''));
+      (item) => item.id == 'how_to_clean_tongue',
+      orElse: () => FavoriteItem(id: '', name: '', imageUrl: ''),
+    );
 
     setState(() {
       isFavorite = favorite.id.isNotEmpty;
@@ -93,10 +94,9 @@ class _HowToCleanYourTonguePageState extends State<HowToCleanYourTonguePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/images/tongue_cleaner.png', //Image path here
+                'assets/images/tongue_cleaner.png',
                 width: 60,
                 height: 60,
-                //color: Colors.white, // Remove if you don't want white tint
                 fit: BoxFit.contain,
               ),
               const SizedBox(height: 10),
@@ -123,7 +123,15 @@ class _HowToCleanYourTonguePageState extends State<HowToCleanYourTonguePage> {
                     ),
                   ),
                   onPressed: () {
-                    // TODO: Add video player
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const VideoPlayerPage(
+                          videoUrl: 'https://www.youtube.com/watch?v=FBc6bU-v8ZQqQ',
+                          title: 'Tongue Cleaning',
+                        ),
+                      ),
+                    );
                   },
                   child: const Text(
                     'Watch Video',

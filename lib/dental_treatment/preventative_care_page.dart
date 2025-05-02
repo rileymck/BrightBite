@@ -1,6 +1,5 @@
 // preventative_care_page.dart
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../bottom_nav_bar.dart';
 import '../favorite_item.dart';
