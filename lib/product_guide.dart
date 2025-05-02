@@ -1,6 +1,5 @@
 // Import required Flutter packages and custom pages
 import 'package:flutter/material.dart';
-import 'package:test_flutter/Other%20Products/tongue_scrapers.dart'; 
 import 'dart:math' show min;
 
 import 'bottom_nav_bar.dart';

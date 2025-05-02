@@ -1,9 +1,8 @@
-// how_to_brush_page.dart
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart'; // Import Hive
-import 'package:hive_flutter/hive_flutter.dart'; // Import Hive Flutter for ValueListenableBuilder
+import 'package:hive_flutter/hive_flutter.dart';
 import '../bottom_nav_bar.dart';
-import '../favorite_item.dart'; // Import your FavoriteItem class
+import '../favorite_item.dart';
+import '../video_player_page.dart';
 
 class HowToBrushPage extends StatefulWidget {
   const HowToBrushPage({super.key});
@@ -13,7 +12,7 @@ class HowToBrushPage extends StatefulWidget {
 }
 
 class _HowToBrushPageState extends State<HowToBrushPage> {
-  bool isFavorite = false; // Track favorite status
+  bool isFavorite = false;
 
   @override
   void initState() {
@@ -24,8 +23,9 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
   Future<void> _checkIfFavorite() async {
     final box = await Hive.openBox('favorites');
     final favorite = box.values.cast<FavoriteItem>().firstWhere(
-        (item) => item.id == 'how_to_brush',
-        orElse: () => FavoriteItem(id: '', name: '', imageUrl: ''));
+      (item) => item.id == 'how_to_brush',
+      orElse: () => FavoriteItem(id: '', name: '', imageUrl: ''),
+    );
 
     setState(() {
       isFavorite = favorite.id.isNotEmpty;
@@ -35,21 +35,18 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
   Future<void> _toggleFavorite() async {
     final box = await Hive.openBox('favorites');
     if (isFavorite) {
-      // Remove from favorites
       final index = box.values
           .cast<FavoriteItem>()
           .toList()
-          .indexWhere((item) => item.id == 'how_to_brush'); // Find the index
+          .indexWhere((item) => item.id == 'how_to_brush');
       if (index != -1) {
-        await box.deleteAt(index); // Delete the item
+        await box.deleteAt(index);
       }
     } else {
-      // Add to favorites
       final newItem = FavoriteItem(
         id: 'how_to_brush',
         name: 'How to Brush',
-        imageUrl:
-            'assets/images/brightbitelogo.png', // Or whatever image you want
+        imageUrl: 'assets/images/brightbitelogo.png',
       );
       await box.add(newItem);
     }
@@ -74,7 +71,7 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
           ValueListenableBuilder(
             valueListenable: Hive.box('favorites').listenable(),
             builder: (context, Box box, _) {
-              _checkIfFavorite(); // Call _checkIfFavorite() here
+              _checkIfFavorite();
               return IconButton(
                 icon: Icon(
                   isFavorite ? Icons.bookmark : Icons.bookmark_border,
@@ -94,10 +91,9 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
           child: Column(
             children: [
               Image.asset(
-                'assets/images/tooth_toothbrush.png', //Image path here
+                'assets/images/tooth_toothbrush.png',
                 width: 60,
                 height: 60,
-                //color: Colors.white, // Remove if you don't want white tint
                 fit: BoxFit.contain,
               ),
               const SizedBox(height: 10),
@@ -123,7 +119,15 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
                     ),
                   ),
                   onPressed: () {
-                    // TODO: Add video player
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const VideoPlayerPage(
+                          videoUrl: 'https://www.youtube.com/watch?v=xm9c5HAUBpY',
+                          title: 'How to Brush',
+                        ),
+                      ),
+                    );
                   },
                   child: const Text(
                     'Watch Video',
@@ -173,18 +177,10 @@ class _HowToBrushPageState extends State<HowToBrushPage> {
                 ),
               ),
               const SizedBox(height: 10),
-              const _BulletPoint(
-                  text:
-                      'Place your toothbrush at a 45-degree angle to the gums.'),
-              const _BulletPoint(
-                  text:
-                      'Gently move the brush back and forth in short (tooth-wide) strokes.'),
-              const _BulletPoint(
-                  text:
-                      'Brush the outer surfaces, the inner surfaces, and the chewing surfaces of the teeth.'),
-              const _BulletPoint(
-                  text:
-                      'To clean the inside surfaces of the front teeth, tilt the brush vertically and make several up-and-down strokes.'),
+              const _BulletPoint(text: 'Place your toothbrush at a 45-degree angle to the gums.'),
+              const _BulletPoint(text: 'Gently move the brush back and forth in short (tooth-wide) strokes.'),
+              const _BulletPoint(text: 'Brush the outer surfaces, the inner surfaces, and the chewing surfaces of the teeth.'),
+              const _BulletPoint(text: 'To clean the inside surfaces of the front teeth, tilt the brush vertically and make several up-and-down strokes.'),
               const SizedBox(height: 30),
             ],
           ),

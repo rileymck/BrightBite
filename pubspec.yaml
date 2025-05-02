@@ -18,6 +18,7 @@ dependencies:
   webview_flutter: ^4.10.0
   url_launcher: ^6.1.11 # or whatever the latest version is
   photo_view: ^0.14.0  # Added from main branch
+  youtube_player_flutter: ^8.1.0
 
 dev_dependencies:
   flutter_test:

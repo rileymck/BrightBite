@@ -1,9 +1,8 @@
-// how_to_floss_page.dart
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../bottom_nav_bar.dart';
 import '../favorite_item.dart';
+import '../video_player_page.dart'; 
 
 class HowToFlossPage extends StatefulWidget {
   const HowToFlossPage({super.key});
@@ -24,8 +23,9 @@ class _HowToFlossPageState extends State<HowToFlossPage> {
   Future<void> _checkIfFavorite() async {
     final box = await Hive.openBox('favorites');
     final favorite = box.values.cast<FavoriteItem>().firstWhere(
-        (item) => item.id == 'how_to_floss',
-        orElse: () => FavoriteItem(id: '', name: '', imageUrl: ''));
+      (item) => item.id == 'how_to_floss',
+      orElse: () => FavoriteItem(id: '', name: '', imageUrl: ''),
+    );
 
     setState(() {
       isFavorite = favorite.id.isNotEmpty;
@@ -91,10 +91,9 @@ class _HowToFlossPageState extends State<HowToFlossPage> {
           child: Column(
             children: [
               Image.asset(
-                'assets/images/string_floss.png', //Image path here
+                'assets/images/string_floss.png',
                 width: 60,
                 height: 60,
-                //color: Colors.white, // Remove if you don't want white tint
                 fit: BoxFit.contain,
               ),
               const SizedBox(height: 10),
@@ -120,7 +119,15 @@ class _HowToFlossPageState extends State<HowToFlossPage> {
                     ),
                   ),
                   onPressed: () {
-                    // TODO: Add video player
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const VideoPlayerPage(
+                          videoUrl: 'https://youtu.be/gLU-kjq5RVQ?si=Ruz_AAADj52OxZsp',
+                          title: 'How to Floss',
+                        ),
+                      ),
+                    );
                   },
                   child: const Text(
                     'Watch Video',
@@ -171,25 +178,30 @@ class _HowToFlossPageState extends State<HowToFlossPage> {
               ),
               const SizedBox(height: 10),
               const _StepLabel(
-                  text: 'Wrap the Floss',
-                  description:
-                      'Take about 18 inches of floss and wrap most of it around one middle finger, winding the rest around the other middle finger.'),
+                text: 'Wrap the Floss',
+                description:
+                    'Take about 18 inches of floss and wrap most of it around one middle finger, winding the rest around the other middle finger.',
+              ),
               const _StepLabel(
-                  text: 'Grip Firmly',
-                  description:
-                      'Hold the floss tightly between your thumbs and forefingers.'),
+                text: 'Grip Firmly',
+                description:
+                    'Hold the floss tightly between your thumbs and forefingers.',
+              ),
               const _StepLabel(
-                  text: 'Slide Gently',
-                  description:
-                      'Guide the floss between your teeth using a gentle rubbing motion. Avoid snapping it into the gums.'),
+                text: 'Slide Gently',
+                description:
+                    'Guide the floss between your teeth using a gentle rubbing motion. Avoid snapping it into the gums.',
+              ),
               const _StepLabel(
-                  text: 'Curve into a C',
-                  description:
-                      'When you reach the gum line, curve the floss around one tooth and slide it gently under the gumline.'),
+                text: 'Curve into a C',
+                description:
+                    'When you reach the gum line, curve the floss around one tooth and slide it gently under the gumline.',
+              ),
               const _StepLabel(
-                  text: 'Move Up & Down',
-                  description:
-                      'Hold the floss against the tooth and move it up and down. Repeat for all teeth, including the back ones.'),
+                text: 'Move Up & Down',
+                description:
+                    'Hold the floss against the tooth and move it up and down. Repeat for all teeth, including the back ones.',
+              ),
               const SizedBox(height: 30),
             ],
           ),
