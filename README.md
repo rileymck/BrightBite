@@ -298,7 +298,7 @@ We welcome contributions to BrightBite! Please follow these steps to contribute:
 
 ### Core Development Team
 - **Whitney Haddad, RDH** - Project Lead, Dental Professional & Content Lead, UI implementation welcome screen and main landing pages, Assets Integration, Implementation of Disclaimer page, Added images, hyperlinks, and descriptions to manual toothbrush product page.
-- **Elicia Perez** - Product and Educational Research, UI Implementation for Treatment Page and toothbrush and mouthrinse product pages.
+- **Elicia Perez** - Product and Educational Research, UI Implementation for Dental Treatment Main Page and Toothbrush, Mouthrinse, and Other in product pages.
 - **Riley Mckenzie** - GitHub Management & Hive Favorites Feature
 - **Shukria Gulzar** - Figma Design, UI Implementation for Product Guide Pages Floss & Floss Alternatives and Toothpaste
 - **Yun Chang** - Scrum Board Setup, UI Development for Smile Academy pages.
