@@ -225,16 +225,18 @@ brightbite/
   <table>
     <tr>
       <td><img width="200" alt="Home Screen" src="assets/images/main_page_screen.png"></td>
-      <td><img width="200" alt="Product Guide" src="assets/images/product_guide.png"></td>
-      <td><img width="200" alt="Product Guide" src="assets/images/manual_toothbrush_product_screen.png"></td>
+      <td><img width="200" alt="Product Guide" src="assets/images/product_guide_screen.png"></td>
+      <td><img width="200" alt="Manual Toothbrush Products" src="assets/images/manual_toothbrush_product_screen.png"></td>
     </tr>
     <tr>
       <td><img width="200" alt="Smile Academy" src="assets/images/smile_academy_screen.png"></td>
       <td><img width="200" alt="Oral Hygiene" src="assets/images/dental_treatment_screen.png"></td>
       <td><img width="200" alt="Educational Video" src="assets/images/oral_hygiene_screen.png"></td>
+    </tr>
+    <tr>
       <td><img width="200" alt="How to Brush" src="assets/images/how_to_brush_screen.png"></td>
-      <td><img width="200" alt="Educational Video" src="assets/images/video_screen.png"></td>
-      <td><img width="200" alt="Educational Video" src="assets/images/favorites_screen.png"></td>
+      <td><img width="200" alt="Video Player" src="assets/images/video_screen.png"></td>
+      <td><img width="200" alt="Favorites" src="assets/images/favorites_screen.png"></td>
     </tr>
   </table>
 </div>
